@@ -5,12 +5,17 @@
  */
 package br.com.projetodescorp.model.usuario;
 
+import br.com.projetodescorp.model.espetaculo.Espetaculo;
 import java.io.Serializable;
+import java.util.List;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 /**
@@ -27,5 +32,6 @@ public class Diretor implements Serializable {
     
     @Column(name="companhia_de_teatro",nullable = false)
     public String companhiaDeTeatro;
-    //public List<Espetaculo> esptetaculosDirigidos;
+    @OneToMany(mappedBy = "diretor", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    public List<Espetaculo> esptetaculosDirigidos;
 }
