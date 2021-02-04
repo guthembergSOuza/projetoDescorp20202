@@ -2,6 +2,7 @@ package br.com.projetodescorp.model.espetaculo;
 
 import br.com.projetodescorp.model.usuario.Ator;
 import java.io.Serializable;
+import java.util.Date;
 import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -14,18 +15,21 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 /**
  *
  * @author guthemberg
  */
 @Entity
-@Table(name="ESPETACULO")
+@Table(name = "ESPETACULO")
 public class Espetaculo implements Serializable {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     public Long id;
-    
+
     @Column(nullable = false)
     public String titulo;
     @Column(nullable = false)
@@ -33,7 +37,7 @@ public class Espetaculo implements Serializable {
     @ManyToOne
     @JoinColumn(nullable = false)
     public Endereco endereco;
-    @Column(name="em_cartaz")
+    @Column(name = "em_cartaz")
     public Boolean emCartaz;
     @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(name = "ATOR_ESPETACULO", joinColumns = {
@@ -43,6 +47,30 @@ public class Espetaculo implements Serializable {
             }
     )
     public List<Ator> elenco;
+
+    @Temporal(TemporalType.DATE)
+    @Column(name = "DT_INICIO", nullable = false)
+    private Date dataInicio;
+
+    @Temporal(TemporalType.DATE)
+    @Column(name = "DT_FIM", nullable = false)
+    private Date dataFim;
+
+    public Date getDataInicio() {
+        return dataInicio;
+    }
+
+    public void setDataInicio(Date dataInicio) {
+        this.dataInicio = dataInicio;
+    }
+
+    public Date getDataFim() {
+        return dataFim;
+    }
+
+    public void setDataFim(Date dataFim) {
+        this.dataFim = dataFim;
+    }
 
     public Long getId() {
         return id;
@@ -91,6 +119,5 @@ public class Espetaculo implements Serializable {
     public boolean setElenco(Ator ator) {
         return this.elenco.add(ator);
     }
-    
-    
+
 }
