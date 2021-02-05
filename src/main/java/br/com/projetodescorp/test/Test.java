@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.com.projetodescorp.test.usuariotest;
+package br.com.projetodescorp.test;
 
 import br.com.projetodescorp.model.usuario.Ator;
 import javax.persistence.EntityManager;
@@ -16,6 +16,7 @@ import javax.persistence.Persistence;
  * @author guthemberg
  */
 public class Test {
+
     public static void main(String[] args) {
         Ator ator = new Ator();
         preencherAtor(ator);
@@ -31,24 +32,25 @@ public class Test {
             em.persist(ator);
             et.commit();
         } catch (Exception ex) {
-            if (et != null)
+            if (et != null) {
                 et.rollback();
+            }
         } finally {
-            if (em != null)
-                em.close();       
-            if (emf != null)
+            if (em != null) {
+                em.close();
+            }
+            if (emf != null) {
                 emf.close();
+            }
         }
     }
-    
+
     private static void preencherAtor(Ator usuario) {
         usuario.setNome("Leonardo di Caprio");
         usuario.setEmail("lenoarodic@gmail.com");
         usuario.setLogin("leonardodi");
         usuario.setSenha("123");
         usuario.setDrt("121214");
-        usuario.setCidade("Recife");
-        usuario.setUf("PE");
         usuario.setDisponivel(true);
-    } 
+    }
 }
