@@ -3,10 +3,9 @@
   <persistence-unit name="projetodescorp20201" transaction-type="RESOURCE_LOCAL">
     <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
     <class>br.com.projetodescorp.model.usuario.Ator</class>
-    <class>br.com.projetodescorp.model.usuario.Diretor</class>
     <properties>
       <property name="javax.persistence.jdbc.driver" value="org.apache.derby.jdbc.ClientDriver"/>
-      <property name="javax.persistence.jdbc.url" value="jdbc:derby://localhost:1527/sample"/>
+      <property name="javax.persistence.jdbc.url" value="jdbc:derby://localhost:1527/projetodescorp20201"/>
       <property name="javax.persistence.jdbc.user" value="app"/>
       <property name="javax.persistence.jdbc.password" value="app"/>
       <property name="javax.persistence.schema-generation.database.action" value="drop-and-create"/>
