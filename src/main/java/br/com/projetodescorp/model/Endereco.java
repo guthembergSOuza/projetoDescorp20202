@@ -30,20 +30,7 @@ public class Endereco implements Serializable {
     public String cidade;
     public String uf;
     public String cep;
-    public String complemento;
-
-    public Endereco() {
-    }
-
-    public Endereco(Integer numero, String rua, String bairro, String cidade, String uf, String cep, String complemento) {
-        this.numero = numero;
-        this.rua = rua;
-        this.bairro = bairro;
-        this.cidade = cidade;
-        this.uf = uf;
-        this.cep = cep;
-        this.complemento = complemento;
-    }
+    public String complemento;   
 
     public Long getId() {
         return id;

@@ -23,7 +23,7 @@ import javax.persistence.Table;
 public class Ator extends Usuario implements Serializable {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)    
     public Long id;
     @Column(name = "drt", nullable = false, unique = true)
     public String drt;
@@ -31,6 +31,7 @@ public class Ator extends Usuario implements Serializable {
     public Endereco endereco;
     @Column(name = "disponivel", nullable = false)
     public Boolean disponivel;
+    
 
     public Long getId() {
         return id;

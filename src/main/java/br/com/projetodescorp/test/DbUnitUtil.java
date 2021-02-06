@@ -5,11 +5,17 @@
  */
 package br.com.projetodescorp.test;
 
+import br.com.projetodescorp.model.Ator;
+import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.EntityTransaction;
+import javax.persistence.Persistence;
 import org.dbunit.DatabaseUnitException;
 import org.dbunit.database.DatabaseConfig;
 import org.dbunit.database.DatabaseConnection;
@@ -27,6 +33,9 @@ import org.dbunit.operation.DatabaseOperation;
 public class DbUnitUtil {
 
     private static final String XML_FILE = "/dbunit/dataset.xml";
+
+    private static final EntityManagerFactory emf
+            = Persistence.createEntityManagerFactory("projetodescorp20201");
 
     public static void inserirDados() throws DatabaseUnitException {
         Connection conn = null;
@@ -56,4 +65,21 @@ public class DbUnitUtil {
             }
         }
     }
+
+    private static void persistirUsuario(Ator ator) throws IOException {
+        EntityManager em = null;
+        EntityTransaction et;
+        try {
+            em = emf.createEntityManager();
+            et = em.getTransaction();
+            et.begin();
+            em.persist(ator);
+            et.commit();
+        } finally {
+            if (em != null) {
+                em.close();
+            }
+        }
+    }
+
 }
