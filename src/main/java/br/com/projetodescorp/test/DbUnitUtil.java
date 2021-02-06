@@ -40,7 +40,7 @@ public class DbUnitUtil {
             InputStream in = DbUnitUtil.class.getResourceAsStream(XML_FILE);
             IDataSet dataSet = builder.build(in);
             DatabaseOperation.CLEAN_INSERT.execute(db_conn, dataSet);
-        } catch (SQLException | DatabaseUnitException ex) {
+        } catch (SQLException ex) {
             throw new RuntimeException(ex.getMessage(), ex);
         } finally {
             try {

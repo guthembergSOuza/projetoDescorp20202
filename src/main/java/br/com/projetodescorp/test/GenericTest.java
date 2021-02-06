@@ -13,6 +13,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
+import org.dbunit.DatabaseUnitException;
 import org.junit.After;
 import org.junit.AfterClass;
 import static org.junit.Assert.fail;
@@ -31,12 +32,12 @@ public class GenericTest {
     protected EntityTransaction et;
 
     @BeforeClass
-    public static void setUpClass() {
+    public static void setUpClass() throws DatabaseUnitException {
         logger = Logger.getGlobal();
-        logger.setLevel(Level.INFO);
-        //logger.setLevel(Level.SEVERE);
-        emf = Persistence.createEntityManagerFactory("arte_colaborativa");
-        //DbUnitUtil.inserirDados();
+        //logger.setLevel(Level.INFO);
+        logger.setLevel(Level.SEVERE);
+        emf = Persistence.createEntityManagerFactory("projetodescorp20201");
+        DbUnitUtil.inserirDados();
     }
 
     @AfterClass

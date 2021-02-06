@@ -5,7 +5,7 @@
  */
 package br.com.projetodescorp.test;
 
-import br.com.projetodescorp.model.usuario.Ator;
+import br.com.projetodescorp.model.Ator;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;

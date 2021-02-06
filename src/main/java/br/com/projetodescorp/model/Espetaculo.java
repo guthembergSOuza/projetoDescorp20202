@@ -1,6 +1,5 @@
-package br.com.projetodescorp.model.espetaculo;
+package br.com.projetodescorp.model;
 
-import br.com.projetodescorp.model.usuario.Ator;
 import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
