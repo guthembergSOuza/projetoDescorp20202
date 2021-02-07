@@ -25,62 +25,71 @@ import org.junit.Test;
  *
  * @author thiagoaraujo
  */
-public class AtorCRUDTest {
+public class AtorCRUDTest extends GenericTest {
 
-    private static EntityManagerFactory emf;
-    private EntityManager em;
-    private EntityTransaction et;
+    private static final EntityManagerFactory emf = Persistence.createEntityManagerFactory("projetodescorp20201");
+    private static EntityManager em;
+    private static EntityTransaction et;
 
-    public void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException {
         persistirAtor();
         consultarAtor(1L);
     }
 
-    //@Test
-    public void persistirAtor() throws IOException {
-        Ator ator;
-        ator = criarAtor();
-        em.persist(ator);
-        em.flush(); //Persiste
+    @Test
+    public static void persistirAtor() throws IOException {
+        Ator ator = criarAtor();
+        em = null;
+        try {
+            em = emf.createEntityManager();
+            et = em.getTransaction();
+            et.begin();
+            em.persist(ator);
+            et.commit();
+        } finally {
+            if (em != null) {
+                em.close();
+            }
+        } //Persiste
 
         assertNotNull(ator.getId());
         //assertNotNull(ator.getCartaoCredito().getId());
     }
 
-    //@Test
-    public void consultarAtor(Long id) throws IOException {
+    @Test
+    public static void consultarAtor(Long id) throws IOException {
+        em = emf.createEntityManager();
         Ator ator = em.find(Ator.class, id);
 
         assertEquals("80825728410", ator.drt);
-        assertEquals("fulano6@gmail.com", ator.email);
+        assertEquals("fulano6@gmail.com", ator.email); //Esse teste falha
 
 //        assertEquals(2, usuario.getTelefones().size());
 //        assertTrue(usuario.getTelefones().contains("(81)99800-7846"));
 //        assertTrue(usuario.getTelefones().contains("(81)3232-6899"));
 //        Endereco endereco = usuario.getEndereco();
 //        assertNotNull(endereco);
-//        
 //        assertEquals("Iputinga", endereco.getBairro());
 //        assertEquals("50670-210", endereco.getCep());
     }
 
-    //@Test
-    private Ator criarAtor() throws IOException {
+    @Test
+    private static Ator criarAtor() throws IOException {
         Ator ator = new Ator();
         //Dados de usuário
-        ator.setNome("Fulano da Silva");
+        ator.setNome("Fulano da Silva Junior");
         ator.setEmail("FulanodaSilva@gmail.com");
         ator.setLogin("FulanodaSilva");
         ator.setSenha("Senha1234");
         //Dados de artor
-        ator.setDrt("65456488864");
+        ator.setDrt("80825728410");
         ator.setDisponivel(Boolean.TRUE);
         ator.setEndereco(criarEndereco());
         return ator;
     }
 
-    //@Test
-    private Endereco criarEndereco() throws IOException {
+    @Test
+    private static Endereco criarEndereco() throws IOException {
         Endereco endereco = new Endereco();
         endereco.setRua("Rua Iolanda Rodrigues Sobral");
         endereco.setBairro("Iputinga");

@@ -42,6 +42,7 @@ public class Test {
             et.begin();
             em.persist(ator);
             et.commit();
+            em.flush();
         } finally {
             if (em != null) {
                 em.close();
@@ -56,7 +57,7 @@ public class Test {
         ator.setLogin("FulanodaSilva");
         ator.setSenha("Senha1234");        
         //Dados de artor
-        ator.setDrt("65456488864");
+        ator.setDrt("80825728410");
         ator.setDisponivel(Boolean.TRUE);
         ator.setEndereco(preencherEndereco());
     }

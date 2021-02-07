@@ -27,15 +27,11 @@ import org.junit.BeforeClass;
 public class GenericTest {
 
     protected static EntityManagerFactory emf;
-    protected static Logger logger;
     protected EntityManager em;
     protected EntityTransaction et;
 
     @BeforeClass
     public static void setUpClass() throws DatabaseUnitException {
-        logger = Logger.getGlobal();
-        //logger.setLevel(Level.INFO);
-        logger.setLevel(Level.SEVERE);
         emf = Persistence.createEntityManagerFactory("projetodescorp20201");
         DbUnitUtil.inserirDados();
     }
@@ -66,17 +62,7 @@ public class GenericTest {
         try {
             et.commit();
         } catch (Exception ex) {
-            logger.log(Level.SEVERE, ex.getMessage(), ex);
             fail(ex.getMessage());
         }
     }
-
-    protected Date getData(Integer dia, Integer mes, Integer ano) {
-        Calendar c = Calendar.getInstance();
-        c.set(Calendar.YEAR, ano);
-        c.set(Calendar.MONTH, mes);
-        c.set(Calendar.DAY_OF_MONTH, dia);
-        return c.getTime();
-    }
-
 }

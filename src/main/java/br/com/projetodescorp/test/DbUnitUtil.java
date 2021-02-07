@@ -49,7 +49,7 @@ public class DbUnitUtil {
             InputStream in = DbUnitUtil.class.getResourceAsStream(XML_FILE);
             IDataSet dataSet = builder.build(in);
             DatabaseOperation.CLEAN_INSERT.execute(db_conn, dataSet);
-        } catch (SQLException ex) {
+        } catch (SQLException | DatabaseUnitException ex) {
             throw new RuntimeException(ex.getMessage(), ex);
         } finally {
             try {
@@ -65,21 +65,4 @@ public class DbUnitUtil {
             }
         }
     }
-
-    private static void persistirUsuario(Ator ator) throws IOException {
-        EntityManager em = null;
-        EntityTransaction et;
-        try {
-            em = emf.createEntityManager();
-            et = em.getTransaction();
-            et.begin();
-            em.persist(ator);
-            et.commit();
-        } finally {
-            if (em != null) {
-                em.close();
-            }
-        }
-    }
-
 }
