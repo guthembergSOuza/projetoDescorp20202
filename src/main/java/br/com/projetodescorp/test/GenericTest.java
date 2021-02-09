@@ -5,17 +5,13 @@
  */
 package br.com.projetodescorp.test;
 
-import java.util.Calendar;
-import java.util.Date;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
+import org.dbunit.DatabaseUnitException;
 import org.junit.After;
 import org.junit.AfterClass;
-import static org.junit.Assert.fail;
 import org.junit.Before;
 import org.junit.BeforeClass;
 
@@ -23,20 +19,16 @@ import org.junit.BeforeClass;
  *
  * @author thiagoaraujo
  */
-public class GenericTest {
+public abstract class GenericTest {
 
     protected static EntityManagerFactory emf;
-    protected static Logger logger;
     protected EntityManager em;
     protected EntityTransaction et;
 
     @BeforeClass
-    public static void setUpClass() {
-        logger = Logger.getGlobal();
-        logger.setLevel(Level.INFO);
-        //logger.setLevel(Level.SEVERE);
-        emf = Persistence.createEntityManagerFactory("arte_colaborativa");
-        //DbUnitUtil.inserirDados();
+    public static void setUpClass() throws DatabaseUnitException {
+        emf = Persistence.createEntityManagerFactory("projetodescorp20201");
+        DbUnitUtil.inserirDados();
     }
 
     @AfterClass
@@ -47,35 +39,15 @@ public class GenericTest {
     @Before
     public void setUp() {
         em = emf.createEntityManager();
-        beginTransaction();
-    }
-
-    @After
-    public void tearDown() {
-        commitTransaction();
-        em.close();
-    }
-
-    private void beginTransaction() {
         et = em.getTransaction();
         et.begin();
     }
 
-    private void commitTransaction() {
-        try {
+    @After
+    public void tearDown() {
+        if (!et.getRollbackOnly()) {
             et.commit();
-        } catch (Exception ex) {
-            logger.log(Level.SEVERE, ex.getMessage(), ex);
-            fail(ex.getMessage());
         }
+        em.close();
     }
-
-    protected Date getData(Integer dia, Integer mes, Integer ano) {
-        Calendar c = Calendar.getInstance();
-        c.set(Calendar.YEAR, ano);
-        c.set(Calendar.MONTH, mes);
-        c.set(Calendar.DAY_OF_MONTH, dia);
-        return c.getTime();
-    }
-
 }

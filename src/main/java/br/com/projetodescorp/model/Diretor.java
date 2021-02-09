@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.com.projetodescorp.model.usuario;
+package br.com.projetodescorp.model;
 
-import br.com.projetodescorp.model.espetaculo.Espetaculo;
+import br.com.projetodescorp.model.Espetaculo;
 import java.io.Serializable;
 import java.util.List;
 import javax.persistence.CascadeType;

@@ -6,18 +6,16 @@
 package br.com.projetodescorp.test;
 
 import java.io.InputStream;
-import java.net.URL;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
 import org.dbunit.DatabaseUnitException;
-import org.dbunit.database.DatabaseConfig;
 import org.dbunit.database.DatabaseConnection;
 import org.dbunit.database.IDatabaseConnection;
 import org.dbunit.dataset.IDataSet;
 import org.dbunit.dataset.xml.FlatXmlDataSetBuilder;
-import org.dbunit.ext.mysql.MySqlDataTypeFactory;
-import org.dbunit.ext.mysql.MySqlMetadataHandler;
 import org.dbunit.operation.DatabaseOperation;
 
 /**
@@ -27,6 +25,9 @@ import org.dbunit.operation.DatabaseOperation;
 public class DbUnitUtil {
 
     private static final String XML_FILE = "/dbunit/dataset.xml";
+
+    private static final EntityManagerFactory emf
+            = Persistence.createEntityManagerFactory("projetodescorp20201");
 
     public static void inserirDados() throws DatabaseUnitException {
         Connection conn = null;
@@ -40,7 +41,7 @@ public class DbUnitUtil {
             InputStream in = DbUnitUtil.class.getResourceAsStream(XML_FILE);
             IDataSet dataSet = builder.build(in);
             DatabaseOperation.CLEAN_INSERT.execute(db_conn, dataSet);
-        } catch (SQLException | DatabaseUnitException ex) {
+        } catch (SQLException ex) {
             throw new RuntimeException(ex.getMessage(), ex);
         } finally {
             try {

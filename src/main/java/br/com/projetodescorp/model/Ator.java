@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.com.projetodescorp.model.usuario;
+package br.com.projetodescorp.model;
 
+import br.com.projetodescorp.model.Endereco;
 import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -18,23 +19,19 @@ import javax.persistence.Table;
  * @author guthemberg
  */
 @Entity
-@Table(name="ATOR")
-public class Ator extends Usuario implements Serializable{
-    
+@Table(name = "ATOR")
+public class Ator extends Usuario implements Serializable {
+
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)    
     public Long id;
-    
-    @Column(name="drt",nullable = false, unique=true)
+    @Column(name = "drt", nullable = false, unique = true)
     public String drt;
-    @Column(name="cidade",nullable = false)
-    public String cidade;
-    @Column(name="uf",nullable = false)
-    public String uf;
-    @Column(name="disponivel",nullable = false)
+    @Column(name = "endereco", nullable = false)
+    public Endereco endereco;
+    @Column(name = "disponivel", nullable = false)
     public Boolean disponivel;
-    //public List<Espetaculo> espetaculos;
-    //public 
+    
 
     public Long getId() {
         return id;
@@ -52,20 +49,12 @@ public class Ator extends Usuario implements Serializable{
         this.drt = drt;
     }
 
-    public String getCidade() {
-        return cidade;
+    public Endereco getEndereco() {
+        return endereco;
     }
 
-    public void setCidade(String cidade) {
-        this.cidade = cidade;
-    }
-
-    public String getUf() {
-        return uf;
-    }
-
-    public void setUf(String uf) {
-        this.uf = uf;
+    public void setEndereco(Endereco endereco) {
+        this.endereco = endereco;
     }
 
     public Boolean getDisponivel() {
@@ -75,5 +64,5 @@ public class Ator extends Usuario implements Serializable{
     public void setDisponivel(Boolean disponivel) {
         this.disponivel = disponivel;
     }
-    
+
 }

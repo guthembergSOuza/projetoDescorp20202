@@ -5,7 +5,13 @@
  */
 package br.com.projetodescorp.test;
 
-import br.com.projetodescorp.model.usuario.Ator;
+import br.com.projetodescorp.model.Ator;
+import br.com.projetodescorp.model.Endereco;
+import br.com.projetodescorp.model.Usuario;
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
+import javax.persistence.CacheRetrieveMode;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
@@ -17,40 +23,65 @@ import javax.persistence.Persistence;
  */
 public class Test {
 
-    public static void main(String[] args) {
+    private static final EntityManagerFactory emf
+            = Persistence.createEntityManagerFactory("projetodescorp20201");
+
+    public static void main(String[] args) throws IOException {
+        persistirUsuario();
+        consultarUsuario(1L);
+    }
+
+    private static void persistirUsuario() throws IOException {
         Ator ator = new Ator();
-        preencherAtor(ator);
-        EntityManagerFactory emf = null;
+        preencherUsuario(ator);
         EntityManager em = null;
-        EntityTransaction et = null;
+        EntityTransaction et;
         try {
-            //EntityManagerFactory realiza a leitura das informações relativas à "persistence-unit".
-            emf = Persistence.createEntityManagerFactory("projetodescorp20201");
-            em = emf.createEntityManager(); //Criação do EntityManager.
-            et = em.getTransaction(); //Recupera objeto responsável pelo gerenciamento de transação.
+            em = emf.createEntityManager();
+            et = em.getTransaction();
             et.begin();
             em.persist(ator);
             et.commit();
-        } catch (Exception ex) {
-            if (et != null) {
-                et.rollback();
-            }
+            em.flush();
         } finally {
             if (em != null) {
                 em.close();
             }
-            if (emf != null) {
-                emf.close();
-            }
         }
     }
 
-    private static void preencherAtor(Ator usuario) {
-        usuario.setNome("Leonardo di Caprio");
-        usuario.setEmail("lenoarodic@gmail.com");
-        usuario.setLogin("leonardodi");
-        usuario.setSenha("123");
-        usuario.setDrt("121214");
-        usuario.setDisponivel(true);
+    private static void preencherUsuario(Ator ator) throws IOException {
+        //Dados de usuário
+        ator.setNome("Fulano da Silva");
+        ator.setEmail("FulanodaSilva@gmail.com");
+        ator.setLogin("FulanodaSilva");
+        ator.setSenha("Senha1234");        
+        //Dados de artor
+        ator.setDrt("80825728410");
+        ator.setDisponivel(Boolean.TRUE);
+        ator.setEndereco(preencherEndereco());
     }
+
+    public static Endereco preencherEndereco() {
+        Endereco endereco = new Endereco();
+        endereco.setRua("Rua Iolanda Rodrigues Sobral");
+        endereco.setBairro("Varzea");
+        endereco.setCidade("Recife");
+        endereco.setUf("Pernambuco");
+        endereco.setCep("50690-220");
+        endereco.setNumero(550);        
+        return endereco;
+    }
+
+    private static void consultarUsuario(long l) {
+        EntityManager em = emf.createEntityManager();
+        Ator ator = em.find(Ator.class, l);
+        System.out.println(ator.getNome());
+        //usuario.getTelefones().iterator() vai provocar uma consulta à tabela TB_TELEFONE.
+        System.out.println(ator.getEndereco());
+        //usuario.getFoto().length vai as informações de TB_USUARIO, incluindo IMG_FOTO.
+        System.out.println(ator.getDisponivel());
+        em.close();
+    }
+
 }
