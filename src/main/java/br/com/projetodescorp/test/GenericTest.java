@@ -24,7 +24,7 @@ import org.junit.BeforeClass;
  *
  * @author thiagoaraujo
  */
-public class GenericTest {
+public abstract class GenericTest {
 
     protected static EntityManagerFactory emf;
     protected EntityManager em;
@@ -44,25 +44,15 @@ public class GenericTest {
     @Before
     public void setUp() {
         em = emf.createEntityManager();
-        beginTransaction();
-    }
-
-    @After
-    public void tearDown() {
-        commitTransaction();
-        em.close();
-    }
-
-    private void beginTransaction() {
         et = em.getTransaction();
         et.begin();
     }
 
-    private void commitTransaction() {
-        try {
+    @After
+    public void tearDown() {
+        if (!et.getRollbackOnly()) {
             et.commit();
-        } catch (Exception ex) {
-            fail(ex.getMessage());
         }
+        em.close();
     }
 }
