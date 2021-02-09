@@ -13,7 +13,7 @@ import org.junit.runners.Suite;
  * @author thiagoaraujo
  */
 @RunWith(Suite.class)
-@Suite.SuiteClasses({br.com.projetodescorp.test.AtorCRUDTest.class})
+@Suite.SuiteClasses({})
 public class TesteSuite {
     
 }
