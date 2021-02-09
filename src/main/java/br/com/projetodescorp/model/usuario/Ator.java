@@ -1,12 +1,9 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package br.com.projetodescorp.model.usuario;
 
+import br.com.projetodescorp.model.espetaculo.Endereco;
 import java.io.Serializable;
 import javax.persistence.Column;
+import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -25,16 +22,18 @@ public class Ator extends Usuario implements Serializable{
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     public Long id;
     
-    @Column(name="drt",nullable = false, unique=true)
+    @Column(name="drt")
     public String drt;
-    @Column(name="cidade",nullable = false)
+    @Column(name="cidade")
     public String cidade;
-    @Column(name="uf",nullable = false)
+    @Column(name="uf")
     public String uf;
-    @Column(name="disponivel",nullable = false)
+    @Column(name="disponivel")
     public Boolean disponivel;
     //public List<Espetaculo> espetaculos;
     //public 
+    @Embedded
+    private Endereco endereco;
 
     public Long getId() {
         return id;
