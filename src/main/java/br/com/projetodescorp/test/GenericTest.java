@@ -5,10 +5,6 @@
  */
 package br.com.projetodescorp.test;
 
-import java.util.Calendar;
-import java.util.Date;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
@@ -16,7 +12,6 @@ import javax.persistence.Persistence;
 import org.dbunit.DatabaseUnitException;
 import org.junit.After;
 import org.junit.AfterClass;
-import static org.junit.Assert.fail;
 import org.junit.Before;
 import org.junit.BeforeClass;
 

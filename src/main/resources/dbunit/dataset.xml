@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataset>     
+    <!-- Usuario id = 1 (ATOR) -->
+    <TB_USUARIO txt_tipo_usuario = "A" txt_cpf = "808.257.284-10" 
+                dt_nascimento = "1999-12-21" txt_email = "fulano@gmail.com" 
+                end_txt_bairro = "Iputinga" end_txt_cep = "50670-210" 
+                end_txt_cidade = "Recife" end_txt_complemento = "Apto. 201" 
+                end_txt_estado = "Pernambuco"
+                end_txt_logradouro = "Rua Ribeirão" end_numero = "20" 
+                txt_login = "fulano" txt_nome = "Fulano Silva" 
+                txt_senha = "teste123" id_cartao_credito="1"/>
+    
+    <TB_TELEFONE id_usuario = "1" txt_num_telefone = "(81)99800-7846"/>
+    
+    <TB_TELEFONE id_usuario = "1" txt_num_telefone = "(81)3232-6899"/>
+    <!-- CartaoCredito id = 2  -->
+    <TB_CARTAO_CREDITO txt_bandeira = "MASTERCARD" dt_expiracao = "2022-04-10" 
+                       txt_numero = "5555666677778884"/>    
+    
+    
+     Ator ator = new Ator();
+        //Dados de usuário
+        ator.setNome("Fulano da Silva Junior3");
+        ator.setEmail("FulanodaSilva@gmail.com");
+        ator.setLogin("FulanodaSilva");
+        ator.setSenha("Senha1234");
+        //Dados de artor
+        ator.setDrt("80825728410");
+        ator.setDisponivel(Boolean.TRUE);
+        ator.setEndereco(criarEndereco());
+    
+</dataset>
