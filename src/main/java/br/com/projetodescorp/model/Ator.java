@@ -5,9 +5,9 @@
  */
 package br.com.projetodescorp.model;
 
-import br.com.projetodescorp.model.Endereco;
 import java.io.Serializable;
 import javax.persistence.Column;
+import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -27,12 +27,10 @@ public class Ator extends Usuario implements Serializable {
     public Long id;
     @Column(name = "drt", nullable = false, unique = true)
     public String drt;
-    @Column(name = "endereco", nullable = false)
-    public Endereco endereco;
     @Column(name = "disponivel", nullable = false)
     public Boolean disponivel;
-    
-
+    @Embedded
+    public Endereco endereco;
     public Long getId() {
         return id;
     }
@@ -49,20 +47,20 @@ public class Ator extends Usuario implements Serializable {
         this.drt = drt;
     }
 
-    public Endereco getEndereco() {
-        return endereco;
-    }
-
-    public void setEndereco(Endereco endereco) {
-        this.endereco = endereco;
-    }
-
     public Boolean getDisponivel() {
         return disponivel;
     }
 
     public void setDisponivel(Boolean disponivel) {
         this.disponivel = disponivel;
+    }
+
+    public Endereco getEndereco() {
+        return endereco;
+    }
+
+    public void setEndereco(Endereco endereco) {
+        this.endereco = endereco;
     }
 
 }
