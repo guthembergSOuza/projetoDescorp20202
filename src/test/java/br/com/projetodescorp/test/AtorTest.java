@@ -47,5 +47,15 @@ public class AtorTest extends GenericTest{
         endereco.setNumero(550);
         return endereco;
     }
+ 
+    @org.junit.Test
+    public void consultarAtor() {
+        Ator ator = em.find(Ator.class, 1L);
+        
+        //procurar Teatro de Santa Isabel - bairro = Santo Antônio
+        assertEquals("Victor Lins", ator.getNome());
+        assertEquals("v.lins@gmail.com", ator.getEmail());
+       
+    }
     
 }
