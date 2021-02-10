@@ -5,6 +5,8 @@
     <class>br.com.projetodescorp.model.Ator</class>
     <class>br.com.projetodescorp.model.Diretor</class>
     <class>br.com.projetodescorp.model.Espetaculo</class>
+    <class>br.com.projetodescorp.model.Contrato</class>
+    <class>br.com.projetodescorp.model.Teatro</class>
     <exclude-unlisted-classes>false</exclude-unlisted-classes>
     <properties>
       <property name="javax.persistence.jdbc.driver" value="org.apache.derby.jdbc.ClientDriver"/>

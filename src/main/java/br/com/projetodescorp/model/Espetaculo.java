@@ -14,6 +14,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -36,9 +37,6 @@ public class Espetaculo implements Serializable {
     
     @Column(nullable = false)
     public String descricao;
-    
-    @Embedded
-    public Endereco endereco;
     
     @Column(name = "em_cartaz")
     public Boolean emCartaz;
@@ -63,7 +61,11 @@ public class Espetaculo implements Serializable {
     @Temporal(TemporalType.DATE)
     @Column(name = "DT_FIM", nullable = false)
     private Date dataFim;
-
+    
+    @OneToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "ID_TEATRO", referencedColumnName = "ID")
+    private Teatro teatro;
+    
     public Date getDataInicio() {
         return dataInicio;
     }
@@ -104,14 +106,6 @@ public class Espetaculo implements Serializable {
         this.descricao = descricao;
     }
 
-    public Endereco getEndereco() {
-        return endereco;
-    }
-
-    public void setEndereco(Endereco endereco) {
-        this.endereco = endereco;
-    }
-
     public Boolean getEmCartaz() {
         return emCartaz;
     }
@@ -134,6 +128,14 @@ public class Espetaculo implements Serializable {
 
     public void setDiretor(Diretor diretor) {
         this.diretor = diretor;
+    }
+
+    public Teatro getTeatro() {
+        return teatro;
+    }
+
+    public void setTeatro(Teatro teatro) {
+        this.teatro = teatro;
     }
 
 }

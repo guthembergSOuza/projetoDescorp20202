@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package br.com.projetodescorp.test;
 
 import br.com.projetodescorp.model.Ator;
@@ -29,7 +24,7 @@ public class ContratoTest extends GenericTest {
 
         contrato.setAtor(ator);
         contrato.setCache("2000");
-
+        
         em.persist(contrato);
         em.flush();
 
@@ -37,4 +32,16 @@ public class ContratoTest extends GenericTest {
 
     }
 
+    @org.junit.Test
+    public void consultarContrato() {
+        Contrato contrato1 = em.find(Contrato.class, 1L);
+        
+        //procurar Teatro de Santa Isabel - bairro = Santo Antônio
+        assertEquals("Victor Lins", contrato1.getAtor().getNome());
+        
+        contrato1 = em.find(Contrato.class, 3L);
+        
+        assertEquals("Lucas Marques", contrato1.getAtor().getNome());
+       
+    }
 }
