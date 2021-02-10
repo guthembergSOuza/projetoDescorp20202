@@ -35,6 +35,8 @@ public class Diretor extends Usuario implements Serializable {
     @OneToMany(mappedBy = "diretor", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     public List<Espetaculo> esptetaculosDirigidos;
 
+    public TipoDiretor tipoDiretor;
+    
     public Long getId() {
         return id;
     }
@@ -57,6 +59,14 @@ public class Diretor extends Usuario implements Serializable {
 
     public void setEsptetaculosDirigidos(List<Espetaculo> esptetaculosDirigidos) {
         this.esptetaculosDirigidos = esptetaculosDirigidos;
+    }
+
+    public TipoDiretor getTipoDiretor() {
+        return tipoDiretor;
+    }
+
+    public void setTipoDiretor(TipoDiretor tipoDiretor) {
+        this.tipoDiretor = tipoDiretor;
     }
     
     
