@@ -4,6 +4,8 @@
  * and open the template in the editor.
  */
 package br.com.projetodescorp.test;
+
+import br.com.projetodescorp.model.Ator;
 import br.com.projetodescorp.model.Contrato;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -17,18 +19,22 @@ import static org.junit.Assert.*;
  * @author gersonbrandao
  */
 public class ContratoTest extends GenericTest {
-    
+
     @Test
-    public void persistirAtor() {
-//        Contrato contrato = new Contrato();
-//        
-//        contrato.ator();
-//        contrato.cache();
-//        
-//        em.persist(contrato);
-//        em.flush();
-//        assertNotNull(contrato.getId());
+    public void persistirContrato() {
+        Contrato contrato = new Contrato();
+
+        Ator ator = em.find(Ator.class, 1L);
+        assertNotNull(ator);
+
+        contrato.setAtor(ator);
+        contrato.setCache("2000");
+
+        em.persist(contrato);
+        em.flush();
+
+        assertNotNull(contrato.getId());
 
     }
-    
+
 }

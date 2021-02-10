@@ -40,11 +40,10 @@ public class Ator extends Usuario implements Serializable {
     public Endereco endereco;
     @OneToMany(mappedBy = "ator", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     public List<Contrato> contrato;
-    
+
     public Long getId() {
         return id;
     }
-    
 
     public void setId(Long id) {
         this.id = id;
