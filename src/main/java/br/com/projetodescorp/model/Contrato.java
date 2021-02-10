@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package br.com.projetodescorp.model;
+
 import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -20,18 +21,18 @@ import javax.persistence.Table;
  * @author gersonbrandao
  */
 @Entity
-@Table(name="Contrato")
+@Table(name = "Contrato")
 public class Contrato implements Serializable {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     public Long id;
     @Column(name = "cache", nullable = false)
     public String cache;
     @ManyToOne(fetch = FetchType.EAGER, optional = false)
-    @JoinColumn(name = "ID_ATOR", referencedColumnName = "ID", nullable = false)
+    @JoinColumn(name = "id_ator", referencedColumnName = "id", nullable = false)
     protected Ator ator;
-    
-    
+
     public Long getId() {
         return id;
     }
@@ -55,6 +56,5 @@ public class Contrato implements Serializable {
     public void setCache(String cache) {
         this.cache = cache;
     }
-    
-    
+
 }

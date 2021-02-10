@@ -30,7 +30,7 @@ import org.eclipse.persistence.jpa.config.Cascade;
 public class Ator extends Usuario implements Serializable {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)    
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     public Long id;
     @Column(name = "drt", nullable = false, unique = true)
     public String drt;
@@ -41,11 +41,9 @@ public class Ator extends Usuario implements Serializable {
     @OneToMany(mappedBy = "ator", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     public List<Contrato> contrato;
 
-    
     public Long getId() {
         return id;
     }
-    
 
     public void setId(Long id) {
         this.id = id;

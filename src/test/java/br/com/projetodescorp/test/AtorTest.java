@@ -7,10 +7,6 @@ package br.com.projetodescorp.test;
 
 import br.com.projetodescorp.model.Ator;
 import br.com.projetodescorp.model.Endereco;
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -44,6 +40,7 @@ public class AtorTest extends GenericTest{
         Endereco endereco = new Endereco();
         endereco.setRua("Rua Iolanda Rodrigues Sobral");
         endereco.setBairro("Iputinga");
+        endereco.setComplemento("A");
         endereco.setCidade("Recife");
         endereco.setUf("Pernambuco");
         endereco.setCep("50690-220");
