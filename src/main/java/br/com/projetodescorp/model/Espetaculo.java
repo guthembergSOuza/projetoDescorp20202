@@ -38,9 +38,6 @@ public class Espetaculo implements Serializable {
     @Column(nullable = false)
     public String descricao;
     
-    @Embedded
-    public Endereco endereco;
-    
     @Column(name = "em_cartaz")
     public Boolean emCartaz;
     
@@ -107,14 +104,6 @@ public class Espetaculo implements Serializable {
 
     public void setDescricao(String descricao) {
         this.descricao = descricao;
-    }
-
-    public Endereco getEndereco() {
-        return endereco;
-    }
-
-    public void setEndereco(Endereco endereco) {
-        this.endereco = endereco;
     }
 
     public Boolean getEmCartaz() {
