@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
+import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -31,14 +32,10 @@ public class Ator extends Usuario implements Serializable {
     public Long id;
     @Column(name = "drt", nullable = false, unique = true)
     public String drt;
-    @Column(name = "endereco", nullable = false)
-    public Endereco endereco;
     @Column(name = "disponivel", nullable = false)
     public Boolean disponivel;
-
-    @OneToMany(mappedBy = "ID", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    protected List<Contrato> contratos = new ArrayList<Contrato>();
-
+    @Embedded
+    public Endereco endereco;
     public Long getId() {
         return id;
     }
@@ -55,20 +52,20 @@ public class Ator extends Usuario implements Serializable {
         this.drt = drt;
     }
 
-    public Endereco getEndereco() {
-        return endereco;
-    }
-
-    public void setEndereco(Endereco endereco) {
-        this.endereco = endereco;
-    }
-
     public Boolean getDisponivel() {
         return disponivel;
     }
 
     public void setDisponivel(Boolean disponivel) {
         this.disponivel = disponivel;
+    }
+
+    public Endereco getEndereco() {
+        return endereco;
+    }
+
+    public void setEndereco(Endereco endereco) {
+        this.endereco = endereco;
     }
 
 }
