@@ -34,7 +34,7 @@ public class DbUnitUtil {
         IDatabaseConnection db_conn = null;
         try {
             conn = DriverManager.getConnection(
-                    "jdbc:derby://localhost:1527/projetodescorp20201", "app", "app");
+                    "jdbc:derby://localhost:1527/projetodescorp20201", "root", "root");
             db_conn = new DatabaseConnection(conn);
             FlatXmlDataSetBuilder builder = new FlatXmlDataSetBuilder();
             builder.setColumnSensing(true);
