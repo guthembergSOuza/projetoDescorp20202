@@ -3,6 +3,9 @@
   <persistence-unit name="projetodescorp20201" transaction-type="RESOURCE_LOCAL">
     <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
     <class>br.com.projetodescorp.model.Ator</class>
+    <class>br.com.projetodescorp.model.Diretor</class>
+    <class>br.com.projetodescorp.model.Espetaculo</class>
+    <exclude-unlisted-classes>false</exclude-unlisted-classes>
     <properties>
       <property name="javax.persistence.jdbc.driver" value="org.apache.derby.jdbc.ClientDriver"/>
       <property name="javax.persistence.jdbc.url" value="jdbc:derby://localhost:1527/projetodescorp20201;create=true"/>
@@ -12,6 +15,11 @@
       <property name="eclipselink.logging.level" value="FINE"/>
       <property name="eclipselink.target-database" value="Derby"/>
       <property name="eclipselink.jdbc.native-sql" value="true"/>
+      <!-- 
+        Outra possibilidade de ativar o carregamento preguiçoso é weaving estatic.
+        De toda forma, o weaving funciona melhor sempre em ambientes JEE como o Glassfish.
+      -->
+      <property name="eclipselink.weaving" value="static"/>
     </properties>
   </persistence-unit>
 </persistence>

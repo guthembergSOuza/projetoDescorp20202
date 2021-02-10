@@ -38,9 +38,9 @@ public class DbUnitUtil {
             db_conn = new DatabaseConnection(conn);
             FlatXmlDataSetBuilder builder = new FlatXmlDataSetBuilder();
             builder.setColumnSensing(true);
-            InputStream in = DbUnitUtil.class.getResourceAsStream(XML_FILE);
-            IDataSet dataSet = builder.build(in);
-            DatabaseOperation.CLEAN_INSERT.execute(db_conn, dataSet);
+            //InputStream in = DbUnitUtil.class.getResourceAsStream(XML_FILE);
+            //IDataSet dataSet = builder.build(in);
+            //DatabaseOperation.CLEAN_INSERT.execute(db_conn, dataSet);
         } catch (SQLException ex) {
             throw new RuntimeException(ex.getMessage(), ex);
         } finally {

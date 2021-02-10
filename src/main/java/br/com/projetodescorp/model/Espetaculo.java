@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 import javax.persistence.Column;
+import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -31,13 +32,20 @@ public class Espetaculo implements Serializable {
 
     @Column(nullable = false)
     public String titulo;
+    
     @Column(nullable = false)
     public String descricao;
-    @ManyToOne
-    @JoinColumn(nullable = false)
+    
+    @Embedded
     public Endereco endereco;
+    
     @Column(name = "em_cartaz")
     public Boolean emCartaz;
+    
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "ID_DIRETOR", referencedColumnName = "ID", nullable = false)
+    protected Diretor diretor;
+    
     @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(name = "ATOR_ESPETACULO", joinColumns = {
         @JoinColumn(name = "espetaculo_id", referencedColumnName = "id", nullable = false)},
@@ -117,6 +125,14 @@ public class Espetaculo implements Serializable {
 
     public boolean setElenco(Ator ator) {
         return this.elenco.add(ator);
+    }
+
+    public Diretor getDiretor() {
+        return diretor;
+    }
+
+    public void setDiretor(Diretor diretor) {
+        this.diretor = diretor;
     }
 
 }
