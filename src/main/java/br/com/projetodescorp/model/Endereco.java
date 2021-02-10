@@ -6,23 +6,14 @@
 package br.com.projetodescorp.model;
 
 import java.io.Serializable;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.Embeddable;
 
 /**
  *
  * @author guthemberg
  */
-@Entity
-@Table(name = "ENDERECO")
+@Embeddable
 public class Endereco implements Serializable {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    public Long id;
 
     public Integer numero;
     public String rua;
@@ -31,14 +22,6 @@ public class Endereco implements Serializable {
     public String uf;
     public String cep;
     public String complemento;   
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
 
     public Integer getNumero() {
         return numero;
