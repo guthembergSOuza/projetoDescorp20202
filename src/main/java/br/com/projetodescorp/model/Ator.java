@@ -5,13 +5,17 @@
  */
 package br.com.projetodescorp.model;
 
-import br.com.projetodescorp.model.Endereco;
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 /**
@@ -23,7 +27,7 @@ import javax.persistence.Table;
 public class Ator extends Usuario implements Serializable {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)    
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     public Long id;
     @Column(name = "drt", nullable = false, unique = true)
     public String drt;
@@ -31,7 +35,9 @@ public class Ator extends Usuario implements Serializable {
     public Endereco endereco;
     @Column(name = "disponivel", nullable = false)
     public Boolean disponivel;
-    
+
+    @OneToMany(mappedBy = "ID", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    protected List<Contrato> contratos = new ArrayList<Contrato>();
 
     public Long getId() {
         return id;
