@@ -1,5 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dataset>     
-    <!-- Usuario id = 1 (ATOR) -->
-    <ATOR nome="Dataset" email="FulanodaSilva@gmail.com" login="DatasetLogin" senha="datasetsenha" drt="00252552" disponivel="1" endereco="E"/>
+<dataset>
+   <!-- Usuario id = 1 (ATOR) -->
+   <ATOR nome="Dataset" email="FulanodaSilva@gmail.com" login="DatasetLogin" senha="datasetsenha" drt="00252552" disponivel="1" numero="160" rua="Rua Sem Volta" bairro="Bairro X" cidade="Cidade X" uf="PE" cep="54730080" complemento="A" />
+   <DIRETOR companhia_de_teatro="Compainha De Teatro" email="diretor@gmail.com" login="diretor1" nome="Nome Diretor" senha="senhaDiretor" tipodiretor="1" />
+   <ESPETACULO titulo="Espetaculo 1" descricao="Espetaculo de teste" dt_inicio="2020-01-10 18:30:00" dt_fim="2020-01-20 18:30:00" em_cartaz="1" bairro="Recife" cep="54750000" cidade="Recife" complemento="Sala 2" numero="166" rua="Do Sol" uf="PE" id_diretor="1" />
+   <CONTRATO cache="1000" id_ator="1" />
+   <!-- Usuario id = 2 (ATOR) -->
+   <ATOR nome="Dataset" email="FulanodaSilva@gmail.com" login="DatasetLogin" senha="datasetsenha" drt="00252553" disponivel="1" numero="160" rua="Rua Sem Volta" bairro="Bairro X" cidade="Cidade X" uf="PE" cep="54730080" complemento="A" />
+   <DIRETOR companhia_de_teatro="Compainha De Teatro" email="diretor@gmail.com" login="diretor1" nome="Nome Diretor" senha="senhaDiretor" tipodiretor="2" />
+   <ESPETACULO titulo="Espetaculo 1" descricao="Espetaculo de teste" dt_inicio="2020-01-10 18:30:00" dt_fim="2020-01-20 18:30:00" em_cartaz="1" bairro="Recife" cep="54750000" cidade="Recife" complemento="Sala 2" numero="166" rua="Do Sol" uf="PE" id_diretor="2" />
+   <CONTRATO cache="1000" id_ator="2" />
+   <!-- Usuario id = 3 (ATOR) -->
+   <ATOR nome="Dataset" email="FulanodaSilva@gmail.com" login="DatasetLogin" senha="datasetsenha" drt="00252554" disponivel="1" numero="160" rua="Rua Sem Volta" bairro="Bairro X" cidade="Cidade X" uf="PE" cep="54730080" complemento="A" />
+   <DIRETOR companhia_de_teatro="Compainha De Teatro" email="diretor@gmail.com" login="diretor1" nome="Nome Diretor" senha="senhaDiretor" tipodiretor="3" />
+   <ESPETACULO titulo="Espetaculo 1" descricao="Espetaculo de teste" dt_inicio="2020-01-10 18:30:00" dt_fim="2020-01-20 18:30:00" em_cartaz="1" bairro="Recife" cep="54750000" cidade="Recife" complemento="Sala 2" numero="166" rua="Do Sol" uf="PE" id_diretor="3" />
+   <CONTRATO cache="1000" id_ator="3" />
+   <!-- Usuario id = 4 (ATOR) -->
+   <ATOR nome="Dataset" email="FulanodaSilva@gmail.com" login="DatasetLogin" senha="datasetsenha" drt="00252555" disponivel="1" numero="160" rua="Rua Sem Volta" bairro="Bairro X" cidade="Cidade X" uf="PE" cep="54730080" complemento="A" />
+   <DIRETOR companhia_de_teatro="Compainha De Teatro" email="diretor@gmail.com" login="diretor1" nome="Nome Diretor" senha="senhaDiretor" tipodiretor="4" />
+   <ESPETACULO titulo="Espetaculo 1" descricao="Espetaculo de teste" dt_inicio="2020-01-10 18:30:00" dt_fim="2020-01-20 18:30:00" em_cartaz="1" bairro="Recife" cep="54750000" cidade="Recife" complemento="Sala 2" numero="166" rua="Do Sol" uf="PE" id_diretor="4" />
+   <CONTRATO cache="1000" id_ator="4" />
+   <!-- Usuario id = 5 (ATOR) -->
+   <ATOR nome="Dataset" email="FulanodaSilva@gmail.com" login="DatasetLogin" senha="datasetsenha" drt="00252556" disponivel="1" numero="160" rua="Rua Sem Volta" bairro="Bairro X" cidade="Cidade X" uf="PE" cep="54730080" complemento="A" />
+   <DIRETOR companhia_de_teatro="Compainha De Teatro" email="diretor@gmail.com" login="diretor1" nome="Nome Diretor" senha="senhaDiretor" tipodiretor="5" />
+   <ESPETACULO titulo="Espetaculo 1" descricao="Espetaculo de teste" dt_inicio="2020-01-10 18:30:00" dt_fim="2020-01-20 18:30:00" em_cartaz="1" bairro="Recife" cep="54750000" cidade="Recife" complemento="Sala 2" numero="166" rua="Do Sol" uf="PE" id_diretor="5" />
+   <CONTRATO cache="1000" id_ator="5" />   
 </dataset>

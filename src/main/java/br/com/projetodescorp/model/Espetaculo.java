@@ -18,6 +18,7 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import br.com.projetodescorp.model.Contrato;
 
 /**
  *
@@ -48,13 +49,13 @@ public class Espetaculo implements Serializable {
     protected Diretor diretor;
     
     @ManyToMany(fetch = FetchType.LAZY)
-    @JoinTable(name = "ATOR_ESPETACULO", joinColumns = {
+    @JoinTable(name = "CONTRATO_ESPETACULO", joinColumns = {
         @JoinColumn(name = "espetaculo_id", referencedColumnName = "id", nullable = false)},
             inverseJoinColumns = {
-                @JoinColumn(name = "ator_id", referencedColumnName = "id", nullable = false)
+                @JoinColumn(name = "contrato_id", referencedColumnName = "id", nullable = false)
             }
     )
-    public List<Ator> elenco;
+    public List<Contrato> elenco;
 
     @Temporal(TemporalType.DATE)
     @Column(name = "DT_INICIO", nullable = false)
@@ -124,12 +125,12 @@ public class Espetaculo implements Serializable {
         this.emCartaz = emCartaz;
     }
 
-    public List<Ator> getElenco() {
+    public List<Contrato> getElenco() {
         return elenco;
     }
 
-    public boolean setElenco(Ator ator) {
-        return this.elenco.add(ator);
+    public boolean setElenco(Contrato contrato) {
+        return this.elenco.add(contrato);
     }
 
     public Diretor getDiretor() {

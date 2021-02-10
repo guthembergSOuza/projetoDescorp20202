@@ -6,13 +6,20 @@
 package br.com.projetodescorp.model;
 
 import java.io.Serializable;
+import java.util.List;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import org.eclipse.persistence.jpa.config.Cascade;
 
 /**
  *
@@ -23,7 +30,7 @@ import javax.persistence.Table;
 public class Ator extends Usuario implements Serializable {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)    
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     public Long id;
     @Column(name = "drt", nullable = false, unique = true)
     public String drt;
@@ -31,6 +38,9 @@ public class Ator extends Usuario implements Serializable {
     public Boolean disponivel;
     @Embedded
     public Endereco endereco;
+    @OneToMany(mappedBy = "ator", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    public List<Contrato> contrato;
+
     public Long getId() {
         return id;
     }
