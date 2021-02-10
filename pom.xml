@@ -7,6 +7,8 @@
     <packaging>jar</packaging>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
     </properties>
     <dependencies>
        <dependency>
@@ -22,18 +24,6 @@
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>4.11</version>
-            <type>jar</type>
-        </dependency>
-        <dependency>
-            <groupId>org.dbunit</groupId>
-            <artifactId>dbunit</artifactId>
-            <version>2.5.3</version>
-            <type>jar</type>
-        </dependency>
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
             <version>4.13.1</version>
             <type>jar</type>
         </dependency>
@@ -42,6 +32,6 @@
             <artifactId>dbunit</artifactId>
             <version>2.7.0</version>
             <type>jar</type>
-        </dependency>         
+        </dependency>
     </dependencies>
 </project>
