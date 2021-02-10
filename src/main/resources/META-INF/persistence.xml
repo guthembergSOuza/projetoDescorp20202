@@ -3,6 +3,7 @@
   <persistence-unit name="projetodescorp20201" transaction-type="RESOURCE_LOCAL">
     <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
     <class>br.com.projetodescorp.model.Ator</class>
+    <class>br.com.projetodescorp.model.Contrato</class>
     <properties>
       <property name="javax.persistence.jdbc.driver" value="org.apache.derby.jdbc.ClientDriver"/>
       <property name="javax.persistence.jdbc.url" value="jdbc:derby://localhost:1527/projetodescorp20201;create=true"/>
