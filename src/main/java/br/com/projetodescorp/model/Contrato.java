@@ -7,9 +7,12 @@ package br.com.projetodescorp.model;
 import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 /**
@@ -22,11 +25,13 @@ public class Contrato implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     public Long id;
-    @Column(name = "ator", nullable = false)
-    public Ator ator;
     @Column(name = "cache", nullable = false)
     public String cache;
-
+    @ManyToOne(fetch = FetchType.EAGER, optional = false)
+    @JoinColumn(name = "ID_ATOR", referencedColumnName = "ID", nullable = false)
+    protected Ator ator;
+    
+    
     public Long getId() {
         return id;
     }
