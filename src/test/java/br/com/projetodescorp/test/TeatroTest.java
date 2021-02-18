@@ -26,37 +26,8 @@ import org.junit.BeforeClass;
  *
  * @author guthemberg
  */
-public class TeatroTest {
-     private static EntityManagerFactory emf;
-    private EntityManager em;
-    private EntityTransaction et;
-
-    @BeforeClass
-    public static void setUpClass() throws DatabaseUnitException {
-        emf = Persistence.createEntityManagerFactory("projetodescorp20201");
-        DbUnitUtil.inserirDados();
-    }
-
-    @AfterClass
-    public static void tearDownClass() {
-        emf.close();
-    }
-
-    @Before
-    public void setUp() {
-        em = emf.createEntityManager();
-        et = em.getTransaction();
-        et.begin();
-    }
-
-    @After
-    public void tearDown() {
-        if (!et.getRollbackOnly()) {
-            et.commit();
-        }
-        em.close();
-    }
-
+public class TeatroTest extends GenericTest {
+    
     @org.junit.Test
     public void persistirTeatro() {
         Teatro teatro;
