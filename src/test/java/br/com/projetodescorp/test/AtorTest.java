@@ -42,7 +42,7 @@ public class AtorTest extends GenericTest{
         endereco.setBairro("Iputinga");
         endereco.setComplemento("A");
         endereco.setCidade("Recife");
-        endereco.setUf("Pernambuco");
+        endereco.setUf("PE");
         endereco.setCep("50690-220");
         endereco.setNumero(550);
         return endereco;
