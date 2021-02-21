@@ -22,8 +22,6 @@ public class Contrato implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     public Long id;
-    @Column(name = "ator", nullable = false)
-    public Ator ator;
     @Column(name = "cache", nullable = false)
     public String cache;
 

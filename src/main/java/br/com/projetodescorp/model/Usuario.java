@@ -1,6 +1,7 @@
 package br.com.projetodescorp.model;
 
 import java.io.Serializable;
+import javax.persistence.Column;
 import javax.persistence.Embedded;
 import javax.persistence.MappedSuperclass;
 
@@ -11,10 +12,14 @@ import javax.persistence.MappedSuperclass;
 @MappedSuperclass
 public class Usuario implements Serializable{
     
-    public String nome;
-    public String email;
-    public String login;
-    public String senha;
+    @Column(name = "nome", nullable = false)
+    protected String nome;
+    @Column(name = "email", nullable = false)
+    protected String email;
+    @Column(name = "login", nullable = false)
+    protected String login;
+    @Column(name = "senha", nullable = false)
+    protected String senha;
 
     public String getNome() {
         return nome;

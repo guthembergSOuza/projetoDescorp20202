@@ -7,10 +7,6 @@ package br.com.projetodescorp.test;
 
 import br.com.projetodescorp.model.Ator;
 import br.com.projetodescorp.model.Endereco;
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -44,11 +40,22 @@ public class AtorTest extends GenericTest{
         Endereco endereco = new Endereco();
         endereco.setRua("Rua Iolanda Rodrigues Sobral");
         endereco.setBairro("Iputinga");
+        endereco.setComplemento("A");
         endereco.setCidade("Recife");
-        endereco.setUf("Pernambuco");
+        endereco.setUf("PE");
         endereco.setCep("50690-220");
         endereco.setNumero(550);
         return endereco;
+    }
+ 
+    @org.junit.Test
+    public void consultarAtor() {
+        Ator ator = em.find(Ator.class, 1L);
+        
+        //procurar Teatro de Santa Isabel - bairro = Santo Antônio
+        assertEquals("Victor Lins", ator.getNome());
+        assertEquals("v.lins@gmail.com", ator.getEmail());
+       
     }
     
 }
