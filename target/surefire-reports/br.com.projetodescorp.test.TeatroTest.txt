@@ -1,0 +1,53 @@
+-------------------------------------------------------------------------------
+Test set: br.com.projetodescorp.test.TeatroTest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.036 sec <<< FAILURE!
+br.com.projetodescorp.test.TeatroTest  Time elapsed: 0.035 sec  <<< ERROR!
+org.dbunit.DatabaseUnitException: Exception processing table name='ESPETACULO'
+	at org.dbunit.operation.AbstractBatchOperation.execute(AbstractBatchOperation.java:240)
+	at org.dbunit.operation.CompositeOperation.execute(CompositeOperation.java:79)
+	at br.com.projetodescorp.test.DbUnitUtil.inserirDados(DbUnitUtil.java:43)
+	at br.com.projetodescorp.test.TeatroTest.setUpClass(TeatroTest.java:38)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.RunBefores.invokeMethod(RunBefores.java:33)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:24)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+Caused by: org.apache.derby.shared.common.error.DerbySQLIntegrityConstraintViolationException: INSERT na tabela 'ESPETACULO' causou uma violação na restrição de chave estrangeira 'ESPETACULOIDTEATRO' para a chave (1).  A instrução foi desfeita.
+	at org.apache.derby.client.am.SQLExceptionFactory.getSQLException(Unknown Source)
+	at org.apache.derby.client.am.SqlException.getSQLException(Unknown Source)
+	at org.apache.derby.client.am.ClientPreparedStatement.execute(Unknown Source)
+	at org.dbunit.database.statement.SimplePreparedStatement.addBatch(SimplePreparedStatement.java:80)
+	at org.dbunit.database.statement.AutomaticPreparedBatchStatement.addBatch(AutomaticPreparedBatchStatement.java:70)
+	at org.dbunit.operation.AbstractBatchOperation.execute(AbstractBatchOperation.java:224)
+	... 27 more
+Caused by: ERROR 23503: INSERT na tabela 'ESPETACULO' causou uma violação na restrição de chave estrangeira 'ESPETACULOIDTEATRO' para a chave (1).  A instrução foi desfeita.
+	at org.apache.derby.client.am.ClientStatement.completeExecute(Unknown Source)
+	at org.apache.derby.client.net.NetStatementReply.parseEXCSQLSTTreply(Unknown Source)
+	at org.apache.derby.client.net.NetStatementReply.readExecute(Unknown Source)
+	at org.apache.derby.client.net.StatementReply.readExecute(Unknown Source)
+	at org.apache.derby.client.net.NetPreparedStatement.readExecute_(Unknown Source)
+	at org.apache.derby.client.am.ClientPreparedStatement.readExecute(Unknown Source)
+	at org.apache.derby.client.am.ClientPreparedStatement.flowExecute(Unknown Source)
+	at org.apache.derby.client.am.ClientPreparedStatement.executeX(Unknown Source)
+	... 31 more
+
