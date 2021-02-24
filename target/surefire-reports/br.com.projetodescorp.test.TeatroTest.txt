@@ -1,13 +1,13 @@
 -------------------------------------------------------------------------------
 Test set: br.com.projetodescorp.test.TeatroTest
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.036 sec <<< FAILURE!
-br.com.projetodescorp.test.TeatroTest  Time elapsed: 0.035 sec  <<< ERROR!
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.033 sec <<< FAILURE!
+br.com.projetodescorp.test.TeatroTest  Time elapsed: 0.033 sec  <<< ERROR!
 org.dbunit.DatabaseUnitException: Exception processing table name='ESPETACULO'
 	at org.dbunit.operation.AbstractBatchOperation.execute(AbstractBatchOperation.java:240)
 	at org.dbunit.operation.CompositeOperation.execute(CompositeOperation.java:79)
 	at br.com.projetodescorp.test.DbUnitUtil.inserirDados(DbUnitUtil.java:43)
-	at br.com.projetodescorp.test.TeatroTest.setUpClass(TeatroTest.java:38)
+	at br.com.projetodescorp.test.GenericTest.setUpClass(GenericTest.java:36)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)

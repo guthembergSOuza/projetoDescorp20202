@@ -1,26 +1,24 @@
 package br.com.projetodescorp.model;
 
 import java.io.Serializable;
-import javax.persistence.Access;
-import javax.persistence.AccessType;
 import javax.persistence.Column;
-import javax.persistence.DiscriminatorColumn;
-import javax.persistence.DiscriminatorType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Inheritance;
-import javax.persistence.InheritanceType;
+import javax.persistence.MappedSuperclass;
 
 /**
  *
  * @author guthemberg
  */
-@Inheritance(strategy = InheritanceType.JOINED) //Estratégia de herança.
-@DiscriminatorColumn(name = "TIPO_USUARIO", //Nome da coluna que vai discriminar subclasses.
-        discriminatorType = DiscriminatorType.STRING, length = 1)
-@Access(AccessType.FIELD)
-public class Usuario implements Serializable {
+@MappedSuperclass
+public class Usuario implements Serializable{
+    
+    @Column(name = "nome", nullable = false)
+    public String nome;
+    @Column(name = "email", nullable = false, unique = true)
+    public String email;
+    @Column(name = "login", nullable = false, unique = true)
+    public String login;
+    @Column(name = "senha", nullable = false)
+    public String senha;
 
     @Id
     @Column(name = "id")

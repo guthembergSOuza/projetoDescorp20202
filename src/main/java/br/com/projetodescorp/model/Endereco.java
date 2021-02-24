@@ -16,20 +16,20 @@ import javax.persistence.Embeddable;
 @Embeddable
 public class Endereco implements Serializable {
 
-    @Column(name = "numero", nullable = false)
-    protected Integer numero;
-    @Column(name = "rua", nullable = false)
-    protected String rua;
-    @Column(name = "bairro", nullable = false)
-    protected String bairro;
-    @Column(name = "cidade", nullable = false)
-    protected String cidade;
-    @Column(name = "uf", nullable = false, length = 2)
-    protected String uf;
-    @Column(name = "cep", nullable = false)
-    protected String cep;
-    @Column(name = "complemento", nullable = false)
-    protected String complemento;
+    @Column(name = "numero")
+    public Integer numero;
+    @Column(name = "rua")
+    public String rua;
+    @Column(name = "bairro")
+    public String bairro;
+    @Column(name = "cidade")
+    public String cidade;
+    @Column(name = "uf")
+    public String uf;
+    @Column(name = "cep")
+    public String cep;
+    @Column(name = "complemento")
+    public String complemento;
 
     public Integer getNumero() {
         return numero;
