@@ -32,19 +32,19 @@ public class Espetaculo implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     public Long id;
 
-    @Column(nullable = false)
+    @Column(name = "titulo", nullable = false)
     public String titulo;
-    
-    @Column(nullable = false)
+
+    @Column(name = "descricao", nullable = false)
     public String descricao;
-    
-    @Column(name = "em_cartaz")
+
+    @Column(name = "em_cartaz", nullable = false)
     public Boolean emCartaz;
-    
+
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "ID_DIRETOR", referencedColumnName = "ID", nullable = false)
     protected Diretor diretor;
-    
+
     @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(name = "CONTRATO_ESPETACULO", joinColumns = {
         @JoinColumn(name = "espetaculo_id", referencedColumnName = "id", nullable = false)},
@@ -61,11 +61,11 @@ public class Espetaculo implements Serializable {
     @Temporal(TemporalType.DATE)
     @Column(name = "DT_FIM", nullable = false)
     private Date dataFim;
-    
+
     @OneToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "ID_TEATRO", referencedColumnName = "ID")
     private Teatro teatro;
-    
+
     public Date getDataInicio() {
         return dataInicio;
     }

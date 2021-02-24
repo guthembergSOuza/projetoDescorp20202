@@ -48,12 +48,12 @@ public class AtorJPQL extends GenericTest {
     public void atorPorUF() {
         logger.info("Executando atorPorUF()");
         TypedQuery<Ator> query = em.createQuery(
-                "SELECT ator FROM Ator ator WHERE ator.uf LIKE :uf", Ator.class);
+                "SELECT ator FROM Ator ator WHERE ator.endereco.uf LIKE :uf", Ator.class);
         query.setParameter("uf", "PE");
 
         List<Ator> atores = query.getResultList();
 
-        assertEquals(1, atores.size());
+        assertEquals(5, atores.size());
 
     }
 

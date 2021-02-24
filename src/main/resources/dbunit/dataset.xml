@@ -34,7 +34,7 @@
    <ESPETACULO titulo="Geni" descricao="A peca retrata a vida sofrida de Geni apos a partida do Trampolim" dt_inicio="2020-01-10 18:30:00" dt_fim="2020-01-20 18:30:00" em_cartaz="1" id_diretor="2" id_teatro="2" />
    <ESPETACULO titulo="A Caverna" descricao="Ser ou não ser, eis a questão! O que é mais certo a se fazer? Sofrer na alma as flechas da culpa, do passado, ou fazer uma revolução?" dt_inicio="2020-01-10 18:30:00" dt_fim="2020-01-20 18:30:00" em_cartaz="1" id_diretor="3" id_teatro="3" />
    <ESPETACULO titulo="Alice" descricao="Peça infantil - historia de Alice" dt_inicio="2020-01-10 18:30:00" dt_fim="2020-01-20 18:30:00" em_cartaz="1"  id_diretor="4" id_teatro="4" />
-   <ESPETACULO titulo="O Mundo de Mônica" descricao="Monica é uma garota cega que enxerga as coisas do seu modo" dt_inicio="2020-01-10 18:30:00" dt_fim="2020-01-20 18:30:00" em_cartaz="1" id_diretor="5" id_teatro="5"/>
+   <ESPETACULO titulo="O Mundo de Mônica" descricao="Monica é uma garota cega que enxerga as coisas do seu modo" dt_inicio="2020-01-10 18:30:00" dt_fim="2020-01-20 18:30:00" em_cartaz="1" id_diretor="1" id_teatro="5"/>
    <!-- Fim Espetaculo -->
    
    <!-- Contrato -->

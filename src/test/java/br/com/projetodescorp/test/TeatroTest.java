@@ -7,20 +7,9 @@ package br.com.projetodescorp.test;
 
 import br.com.projetodescorp.model.Endereco;
 import br.com.projetodescorp.model.Teatro;
-import br.com.projetodescorp.test.DbUnitUtil;
-import java.util.Calendar;
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.EntityTransaction;
-import javax.persistence.Persistence;
-import org.dbunit.DatabaseUnitException;
-import org.junit.After;
-import org.junit.AfterClass;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertTrue;
-import org.junit.Before;
-import org.junit.BeforeClass;
+import org.junit.Test;
 
 /**
  *
@@ -28,7 +17,7 @@ import org.junit.BeforeClass;
  */
 public class TeatroTest extends GenericTest {
     
-    @org.junit.Test
+    @Test
     public void persistirTeatro() {
         Teatro teatro;
         teatro = criarTeatro("Teatro Arraial Ariano Suassuna",94,457,"R. da Aurora","Boa Vista","Recife","PE","50050000","na avenida");
@@ -75,7 +64,7 @@ public class TeatroTest extends GenericTest {
         return endereco;
     }
     
-    @org.junit.Test
+    @Test
     public void consultarTeatro() {
         Teatro teatro = em.find(Teatro.class, 1L);
         
