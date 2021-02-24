@@ -6,7 +6,6 @@ br\com\projetodescorp\model\Contrato.class
 br\com\projetodescorp\model\Usuario.class
 br\com\projetodescorp\model\Espetaculo.class
 br\com\projetodescorp\test\GenericTest.class
-br\com\projetodescorp\test\Logger.class
 br\com\projetodescorp\model\Teatro.class
 br\com\projetodescorp\test\DbUnitUtil.class
 br\com\projetodescorp\model\Endereco.class
