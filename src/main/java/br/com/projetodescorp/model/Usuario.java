@@ -2,7 +2,6 @@ package br.com.projetodescorp.model;
 
 import java.io.Serializable;
 import javax.persistence.Column;
-import javax.persistence.Embedded;
 import javax.persistence.MappedSuperclass;
 
 /**
@@ -12,14 +11,14 @@ import javax.persistence.MappedSuperclass;
 @MappedSuperclass
 public class Usuario implements Serializable{
     
-    @Column(name = "nome", nullable = false)
-    protected String nome;
-    @Column(name = "email", nullable = false)
-    protected String email;
-    @Column(name = "login", nullable = false)
-    protected String login;
-    @Column(name = "senha", nullable = false)
-    protected String senha;
+    @Column(name = "nome")
+    public String nome;
+    @Column(name = "email", unique = true)
+    public String email;
+    @Column(name = "login", unique = true)
+    public String login;
+    @Column(name = "senha")
+    public String senha;
 
     public String getNome() {
         return nome;
@@ -52,5 +51,5 @@ public class Usuario implements Serializable{
     public void setSenha(String senha) {
         this.senha = senha;
     }
-    
+
 }

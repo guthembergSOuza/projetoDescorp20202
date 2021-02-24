@@ -7,41 +7,67 @@ package br.com.projetodescorp.test;
 
 import br.com.projetodescorp.model.Ator;
 import java.util.List;
-import javax.persistence.TypedQuery;
 import org.junit.Test;
+import javax.persistence.TypedQuery;
 import static org.junit.Assert.*;
 
 /**
  *
  * @author taoal
  */
-public class JpqlTest extends GenericTest {   
+public class AtorJPQL extends GenericTest {
 
     @Test
     public void atorPorDRT() {
-        logger.info("Executando categoriaPorNome()");
+        logger.info("Executando atorPorDRT()");
         TypedQuery<Ator> query = em.createQuery(
-                "SELECT a FROM Ator a WHERE a.drt LIKE :drt",
+                "SELECT ator FROM Ator ator WHERE ator.drt LIKE :drt",
                 Ator.class);
-        query.setParameter("drt", "1234");
+        query.setParameter("drt", "20200102");
+
         List<Ator> atores = query.getResultList();
-               
-        assertEquals(1, atores.size());        
-        
+
+        assertEquals(1, atores.size());
+
+    }
+
+    @Test
+    public void atorPorNome() {
+        logger.info("Executando atorPorNome()");
+        TypedQuery<Ator> query = em.createQuery(
+                "SELECT ator FROM Ator ator WHERE ator.nome LIKE :nome", Ator.class);
+        query.setParameter("nome", "Victor Lins");
+
+        List<Ator> atores = query.getResultList();
+
+        assertEquals(1, atores.size());
+
+    }
+
+    @Test
+    public void atorPorUF() {
+        logger.info("Executando atorPorUF()");
+        TypedQuery<Ator> query = em.createQuery(
+                "SELECT ator FROM Ator ator WHERE ator.uf LIKE :uf", Ator.class);
+        query.setParameter("uf", "PE");
+
+        List<Ator> atores = query.getResultList();
+
+        assertEquals(1, atores.size());
+
     }
 
 //    @Test
-//    public void categoriaPorNomeNamedQuery() {
-//        logger.info("Executando categoriaPorNomeNamedQuery()");
-//        TypedQuery<Categoria> query = em.createNamedQuery("Categoria.PorNome", Categoria.class);
-//        query.setParameter("nome", "Instrumentos%");
-//        List<Categoria> categorias = query.getResultList();
-//
-//        categorias.forEach(categoria -> {
-//            assertTrue(categoria.getNome().startsWith("Instrumentos"));
-//        });
-//
-//        assertEquals(2, categorias.size());
+//    public void maximaEMinimaDataNascimento() {
+//        logger.info("Executando maximaEMinimaDataNascimento()");
+//        Query query = em.createQuery(
+//                "SELECT MAX(c.dataNascimento), MIN(c.dataNascimento) FROM Comprador c");
+//        Object[] resultado = (Object[]) query.getSingleResult();
+//        SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
+//        String maiorData = dateFormat.format((Date) resultado[0]);
+//        String menorData = dateFormat.format((Date) resultado[1]);
+//        assertEquals("21-12-1999", maiorData);
+//        assertEquals("11-08-1973", menorData);
 //    }
 //
 //    @Test

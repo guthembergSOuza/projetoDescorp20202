@@ -9,17 +9,16 @@ import java.io.Serializable;
 import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
+import javax.persistence.DiscriminatorValue;
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
-import org.eclipse.persistence.jpa.config.Cascade;
 
 /**
  *
@@ -27,6 +26,8 @@ import org.eclipse.persistence.jpa.config.Cascade;
  */
 @Entity
 @Table(name = "ATOR")
+@DiscriminatorValue(value = "C")
+@PrimaryKeyJoinColumn(name = "ID", referencedColumnName = "ID")
 public class Ator extends Usuario implements Serializable {
 
     @Id

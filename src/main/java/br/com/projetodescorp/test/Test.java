@@ -7,11 +7,7 @@ package br.com.projetodescorp.test;
 
 import br.com.projetodescorp.model.Ator;
 import br.com.projetodescorp.model.Endereco;
-import br.com.projetodescorp.model.Usuario;
 import java.io.IOException;
-import java.util.HashMap;
-import java.util.Map;
-import javax.persistence.CacheRetrieveMode;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
