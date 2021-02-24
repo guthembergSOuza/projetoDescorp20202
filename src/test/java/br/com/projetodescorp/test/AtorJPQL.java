@@ -43,7 +43,7 @@ public class AtorJPQL extends GenericTest {
         assertEquals(1, atores.size());
 
     }
-    
+
     @Test
     public void atorPorUF() {
         logger.info("Executando atorPorUF()");
@@ -57,6 +57,18 @@ public class AtorJPQL extends GenericTest {
 
     }
 
+//    @Test
+//    public void maximaEMinimaDataNascimento() {
+//        logger.info("Executando maximaEMinimaDataNascimento()");
+//        Query query = em.createQuery(
+//                "SELECT MAX(c.dataNascimento), MIN(c.dataNascimento) FROM Comprador c");
+//        Object[] resultado = (Object[]) query.getSingleResult();
+//        SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
+//        String maiorData = dateFormat.format((Date) resultado[0]);
+//        String menorData = dateFormat.format((Date) resultado[1]);
+//        assertEquals("21-12-1999", maiorData);
+//        assertEquals("11-08-1973", menorData);
+//    }
 //
 //    @Test
 //    public void quantidadeCategoriasFilhas() {

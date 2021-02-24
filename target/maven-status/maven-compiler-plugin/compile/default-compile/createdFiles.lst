@@ -1,4 +1,5 @@
 br\com\projetodescorp\model\Ator.class
+br\com\projetodescorp\test\JpqlTest.class
 br\com\projetodescorp\model\Diretor.class
 br\com\projetodescorp\model\TipoDiretor.class
 br\com\projetodescorp\test\Test.class

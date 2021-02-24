@@ -15,9 +15,7 @@ import static org.junit.Assert.*;
  *
  * @author taoal
  */
-public class JpqlTest extends GenericTest {
-
-    Logger logger = new Logger();
+public class JpqlTest extends GenericTest {   
 
     @Test
     public void atorPorDRT() {
