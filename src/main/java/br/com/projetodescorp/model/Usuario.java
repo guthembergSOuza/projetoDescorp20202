@@ -12,13 +12,13 @@ import javax.persistence.MappedSuperclass;
 public class Usuario implements Serializable{
     
     @Column(name = "nome")
-    public String nome;
+    private String nome;
     @Column(name = "email", unique = true)
-    public String email;
+    private String email;
     @Column(name = "login", unique = true)
-    public String login;
+    private String login;
     @Column(name = "senha")
-    public String senha;
+    private String senha;
 
     public String getNome() {
         return nome;

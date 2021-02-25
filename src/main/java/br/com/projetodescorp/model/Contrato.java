@@ -6,6 +6,7 @@
 package br.com.projetodescorp.model;
 
 import java.io.Serializable;
+import java.util.Objects;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -26,12 +27,12 @@ public class Contrato implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    public Long id;
+    private Long id;
     @Column(name = "cache", nullable = false)
-    public String cache;
+    private String cache;
     @ManyToOne(fetch = FetchType.EAGER, optional = false)
     @JoinColumn(name = "id_ator", referencedColumnName = "id", nullable = false)
-    protected Ator ator;
+    private Ator ator;
 
     public Long getId() {
         return id;
@@ -55,6 +56,31 @@ public class Contrato implements Serializable {
 
     public void setCache(String cache) {
         this.cache = cache;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 3;
+        hash = 47 * hash + Objects.hashCode(this.id);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Contrato other = (Contrato) obj;
+        if (!Objects.equals(this.id, other.id)) {
+            return false;
+        }
+        return true;
     }
 
 }

@@ -17,19 +17,19 @@ import javax.persistence.Embeddable;
 public class Endereco implements Serializable {
 
     @Column(name = "numero")
-    public Integer numero;
+    private Integer numero;
     @Column(name = "rua")
-    public String rua;
+    private String rua;
     @Column(name = "bairro")
-    public String bairro;
+    private String bairro;
     @Column(name = "cidade")
-    public String cidade;
+    private String cidade;
     @Column(name = "uf")
-    public String uf;
+    private String uf;
     @Column(name = "cep")
-    public String cep;
+    private String cep;
     @Column(name = "complemento")
-    public String complemento;
+    private String complemento;
 
     public Integer getNumero() {
         return numero;
