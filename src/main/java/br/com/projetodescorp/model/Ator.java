@@ -17,6 +17,8 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
@@ -29,6 +31,14 @@ import javax.persistence.Table;
 @Table(name = "ATOR")
 @DiscriminatorValue(value = "C")
 @PrimaryKeyJoinColumn(name = "ID", referencedColumnName = "ID")
+@NamedQueries(
+        {
+            @NamedQuery(
+                    name = "Ator.PorEstado",
+                    query = "SELECT a FROM Ator a WHERE a.endereco.uf LIKE :estado"
+            )
+        }
+)
 public class Ator extends Usuario implements Serializable {
 
     @Id

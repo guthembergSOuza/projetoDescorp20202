@@ -29,6 +29,17 @@ public class TeatroJPQL extends GenericTest {
     }
     
     @Test
+    public void teatroPorCidadeNamedQuery() {
+        logger.info("Executando TeatroPorCidade()");
+        TypedQuery<Teatro> query = em.createNamedQuery("Teatro.PorCidade",Teatro.class);
+        query.setParameter("cidade", "Recife");
+
+        List<Teatro> teatros = query.getResultList();
+
+        assertEquals(4, teatros.size());
+    }
+    
+    @Test
     public void teatroPorEspetaculo(){
         logger.info("Executando teatroPorEspetaculo()");
         TypedQuery<Teatro> query = em.createQuery(

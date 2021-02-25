@@ -57,6 +57,18 @@ public class AtorJPQL extends GenericTest {
         assertEquals(5, atores.size());
 
     }
+    
+    @Test
+    public void atorPorUFNamedQuery() {
+        logger.info("Executando atorPorUFNamedQuery()");
+        TypedQuery<Ator> query = em.createNamedQuery("Ator.PorEstado", Ator.class);
+        query.setParameter("estado", "PE");
+
+        List<Ator> atores = query.getResultList();
+
+        assertEquals(5, atores.size());
+
+    }
 
     @Test
     public void atorContratos() {
