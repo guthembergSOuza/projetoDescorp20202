@@ -41,7 +41,7 @@ public class Espetaculo implements Serializable {
     @Column(name = "em_cartaz", nullable = false)
     public Boolean emCartaz;
 
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @ManyToOne(fetch = FetchType.EAGER, optional = false)
     @JoinColumn(name = "ID_DIRETOR", referencedColumnName = "ID", nullable = false)
     protected Diretor diretor;
 
@@ -62,8 +62,8 @@ public class Espetaculo implements Serializable {
     @Column(name = "DT_FIM", nullable = false)
     private Date dataFim;
 
-    @OneToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "ID_TEATRO", referencedColumnName = "ID")
+    @ManyToOne(fetch = FetchType.EAGER, optional = false)
+    @JoinColumn(name = "ID_TEATRO", referencedColumnName = "ID", nullable = false)
     private Teatro teatro;
 
     public Date getDataInicio() {
