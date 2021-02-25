@@ -30,11 +30,11 @@
    <!-- Fim Teatro -->
    
    <!-- Espetaculo -->
-   <ESPETACULO titulo="O Beijo no Asfalto" descricao="O Beijo no Asfalto é uma peça de teatro brasileira de Nelson Rodrigues, publicada em 1960" dt_inicio="2020-01-10 18:30:00" dt_fim="2020-01-20 18:30:00" em_cartaz="1" id_diretor="1" id_teatro="1" />
-   <ESPETACULO titulo="Geni" descricao="A peca retrata a vida sofrida de Geni apos a partida do Trampolim" dt_inicio="2020-01-10 18:30:00" dt_fim="2020-01-20 18:30:00" em_cartaz="1" id_diretor="2" id_teatro="2" />
-   <ESPETACULO titulo="A Caverna" descricao="Ser ou não ser, eis a questão! O que é mais certo a se fazer? Sofrer na alma as flechas da culpa, do passado, ou fazer uma revolução?" dt_inicio="2020-01-10 18:30:00" dt_fim="2020-01-20 18:30:00" em_cartaz="1" id_diretor="3" id_teatro="3" />
+   <ESPETACULO titulo="O Beijo no Asfalto" descricao="O Beijo no Asfalto é uma peça de teatro brasileira de Nelson Rodrigues, publicada em 1960" dt_inicio="2020-01-10 18:30:00" dt_fim="2020-02-15 18:30:00" em_cartaz="1" id_diretor="1" id_teatro="1" />
+   <ESPETACULO titulo="Geni" descricao="A peca retrata a vida sofrida de Geni apos a partida do Trampolim" dt_inicio="2020-01-10 18:30:00" dt_fim="2020-02-11 18:30:00" em_cartaz="1" id_diretor="2" id_teatro="2" />
+   <ESPETACULO titulo="A Caverna" descricao="Ser ou não ser, eis a questão! O que é mais certo a se fazer? Sofrer na alma as flechas da culpa, do passado, ou fazer uma revolução?" dt_inicio="2020-01-10 18:30:00" dt_fim="2020-02-20 18:30:00" em_cartaz="1" id_diretor="3" id_teatro="3" />
    <ESPETACULO titulo="Alice" descricao="Peça infantil - historia de Alice" dt_inicio="2020-01-10 18:30:00" dt_fim="2020-01-20 18:30:00" em_cartaz="1"  id_diretor="4" id_teatro="4" />
-   <ESPETACULO titulo="O Mundo de Mônica" descricao="Monica é uma garota cega que enxerga as coisas do seu modo" dt_inicio="2020-01-10 18:30:00" dt_fim="2020-01-20 18:30:00" em_cartaz="1" id_diretor="1" id_teatro="5"/>
+   <ESPETACULO titulo="O Mundo de Mônica" descricao="Monica é uma garota cega que enxerga as coisas do seu modo" dt_inicio="2020-01-10 18:30:00" dt_fim="2020-01-20 18:30:00" em_cartaz="1" id_diretor="5" id_teatro="5"/>
    <!-- Fim Espetaculo -->
    
    <!-- Contrato -->
@@ -59,10 +59,10 @@
    <CONTRATO_ESPETACULO espetaculo_id="1" contrato_id="4"/>
    <CONTRATO_ESPETACULO espetaculo_id="1" contrato_id="5"/>
    
-   <CONTRATO_ESPETACULO espetaculo_id="2" contrato_id="1"/>
-   <CONTRATO_ESPETACULO espetaculo_id="2" contrato_id="2"/>
-   <CONTRATO_ESPETACULO espetaculo_id="2" contrato_id="3"/>
-   <CONTRATO_ESPETACULO espetaculo_id="2" contrato_id="4"/>
-   <CONTRATO_ESPETACULO espetaculo_id="2" contrato_id="5"/>
+   <CONTRATO_ESPETACULO espetaculo_id="2" contrato_id="6"/>
+   <CONTRATO_ESPETACULO espetaculo_id="2" contrato_id="7"/>
+   <CONTRATO_ESPETACULO espetaculo_id="2" contrato_id="8"/>
+   <CONTRATO_ESPETACULO espetaculo_id="2" contrato_id="9"/>
+   <CONTRATO_ESPETACULO espetaculo_id="2" contrato_id="10"/>
    
 </dataset>
