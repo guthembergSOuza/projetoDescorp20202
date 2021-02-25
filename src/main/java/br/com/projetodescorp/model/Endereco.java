@@ -6,6 +6,7 @@
 package br.com.projetodescorp.model;
 
 import java.io.Serializable;
+import javax.persistence.Column;
 import javax.persistence.Embeddable;
 
 /**
@@ -15,13 +16,20 @@ import javax.persistence.Embeddable;
 @Embeddable
 public class Endereco implements Serializable {
 
+    @Column(name = "numero")
     public Integer numero;
+    @Column(name = "rua")
     public String rua;
+    @Column(name = "bairro")
     public String bairro;
+    @Column(name = "cidade")
     public String cidade;
+    @Column(name = "uf")
     public String uf;
+    @Column(name = "cep")
     public String cep;
-    public String complemento;   
+    @Column(name = "complemento")
+    public String complemento;
 
     public Integer getNumero() {
         return numero;
