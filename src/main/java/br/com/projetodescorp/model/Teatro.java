@@ -27,6 +27,10 @@ import javax.persistence.Table;
             @NamedQuery(
                     name = "Teatro.PorCidade",
                     query = "SELECT t FROM Teatro t WHERE t.endereco.cidade LIKE :cidade"
+            ),
+            @NamedQuery(
+                    name = "Teatro.PorId",
+                    query = "SELECT t FROM Teatro t WHERE t.id = :id"
             )
         }
 )
