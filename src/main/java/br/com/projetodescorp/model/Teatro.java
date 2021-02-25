@@ -1,6 +1,7 @@
 package br.com.projetodescorp.model;
 
 import java.io.Serializable;
+import java.util.Objects;
 import javax.persistence.Column;
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
@@ -18,14 +19,15 @@ import javax.persistence.Table;
 public class Teatro implements Serializable {
     
     @Id
+    @Column(name="id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    public Long id;
+    private Long id;
     @Column(name="nome")
-    public String nome;
+    private String nome;
     @Column(name="quantidade_lugares")
-    public int quantidadeLugares;
+    private int quantidadeLugares;
     @Embedded
-    public Endereco endereco;
+    private Endereco endereco;
 
     public Long getId() {
         return id;
@@ -58,7 +60,30 @@ public class Teatro implements Serializable {
     public void setEndereco(Endereco endereco) {
         this.endereco = endereco;
     }
-    
-    
+
+    @Override
+    public int hashCode() {
+        int hash = 3;
+        hash = 17 * hash + Objects.hashCode(this.id);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Teatro other = (Teatro) obj;
+        if (!Objects.equals(this.id, other.id)) {
+            return false;
+        }
+        return true;
+    }
     
 }

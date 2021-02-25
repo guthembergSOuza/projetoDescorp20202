@@ -7,6 +7,7 @@ package br.com.projetodescorp.model;
 
 import java.io.Serializable;
 import java.util.List;
+import java.util.Objects;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.DiscriminatorValue;
@@ -32,15 +33,15 @@ public class Ator extends Usuario implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    public Long id;
+    private Long id;
     @Column(name = "drt", nullable = false, unique = true)
-    public String drt;
+    private String drt;
     @Column(name = "disponivel", nullable = false)
-    public Boolean disponivel;
+    private Boolean disponivel;
     @Embedded
-    public Endereco endereco;
+    private Endereco endereco;
     @OneToMany(mappedBy = "ator", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    public List<Contrato> contrato;
+    private List<Contrato> contrato;
 
     public Long getId() {
         return id;
@@ -72,6 +73,31 @@ public class Ator extends Usuario implements Serializable {
 
     public void setEndereco(Endereco endereco) {
         this.endereco = endereco;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 3;
+        hash = 47 * hash + Objects.hashCode(this.id);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Ator other = (Ator) obj;
+        if (!Objects.equals(this.id, other.id)) {
+            return false;
+        }
+        return true;
     }
 
 }

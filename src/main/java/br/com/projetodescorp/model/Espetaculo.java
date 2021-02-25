@@ -4,7 +4,6 @@ import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 import javax.persistence.Column;
-import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -14,11 +13,10 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-import br.com.projetodescorp.model.Contrato;
+import java.util.Objects;
 
 /**
  *
@@ -29,21 +27,22 @@ import br.com.projetodescorp.model.Contrato;
 public class Espetaculo implements Serializable {
 
     @Id
+    @Column(name="id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    public Long id;
+    private Long id;
 
     @Column(name = "titulo", nullable = false)
-    public String titulo;
+    private String titulo;
 
     @Column(name = "descricao", nullable = false)
-    public String descricao;
+    private String descricao;
 
     @Column(name = "em_cartaz", nullable = false)
-    public Boolean emCartaz;
+    private Boolean emCartaz;
 
     @ManyToOne(fetch = FetchType.EAGER, optional = false)
     @JoinColumn(name = "ID_DIRETOR", referencedColumnName = "ID", nullable = false)
-    protected Diretor diretor;
+    private Diretor diretor;
 
     @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(name = "CONTRATO_ESPETACULO", joinColumns = {
@@ -52,7 +51,7 @@ public class Espetaculo implements Serializable {
                 @JoinColumn(name = "contrato_id", referencedColumnName = "id", nullable = false)
             }
     )
-    public List<Contrato> elenco;
+    private List<Contrato> elenco;
 
     @Temporal(TemporalType.DATE)
     @Column(name = "DT_INICIO", nullable = false)
@@ -136,6 +135,31 @@ public class Espetaculo implements Serializable {
 
     public void setTeatro(Teatro teatro) {
         this.teatro = teatro;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 5;
+        hash = 67 * hash + Objects.hashCode(this.id);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Espetaculo other = (Espetaculo) obj;
+        if (!Objects.equals(this.id, other.id)) {
+            return false;
+        }
+        return true;
     }
 
 }
