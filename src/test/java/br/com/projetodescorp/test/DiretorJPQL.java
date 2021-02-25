@@ -7,15 +7,8 @@ package br.com.projetodescorp.test;
 
 import br.com.projetodescorp.model.Diretor;
 import static br.com.projetodescorp.test.GenericTest.logger;
-import java.math.BigInteger;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Date;
 import java.util.List;
-import javax.persistence.Query;
 import javax.persistence.TypedQuery;
-import org.hamcrest.CoreMatchers;
-import static org.hamcrest.CoreMatchers.startsWith;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -61,7 +54,7 @@ public class DiretorJPQL extends GenericTest{
 
     
     @Test
-    public void diretoreTipoDistinto() {
+    public void diretorTipoDistinto() {
         logger.info("Executando diretorTipoDistinto()");
         TypedQuery<String> query
                 = em.createQuery("SELECT DISTINCT(d.tipoDiretor) FROM Diretor d ORDER BY d.tipoDiretor", String.class);
@@ -70,17 +63,35 @@ public class DiretorJPQL extends GenericTest{
         assertEquals(2, diretores.size());
     }
     
+ 
+    @Test
+    public void diretorPorId() {
+        logger.info("Executando diretorPorId()");
+        TypedQuery<Diretor> query = em.createQuery("SELECT d FROM Diretor d WHERE d.id = ?1", Diretor.class);
+        query.setParameter(1, 8);
+        List<Diretor> diretores = query.getResultList();
+        assertNotNull(diretores);
+        assertEquals(1, diretores.size());
+    }
     
+    
+    
+    
+    
+    ///////////////////////////////////////////////////////////////////////////////////////////////////
+
 //    @Test
-//    public void diretorPorId() {
-//        logger.info("Executando diretorPorId()");
-//        TypedQuery<Diretor> query = em.createQuery(
-//                "SELECT d FROM Diretor d WHERE d.id = ?1", Diretor.class);
-//        query.setParameter(1,11);
-//        List<Diretor> diretores = query.getResultList();
-//        assertNotNull(diretores);
-//
+//    public void categoriaQuantidadeItens() {
+//        logger.info("Executando categoriaQuantidadeItens()");
+//        Query query = em.createQuery("SELECT c, COUNT(i) FROM Categoria c, Item i WHERE c MEMBER OF i.categorias GROUP BY c");
+//        List<Object[]> resultados = query.getResultList();
+//        assertEquals(4, resultados.size());
+//        assertEquals("Instrumentos Musicais: 5", getCategoriaQuantidade(resultados.get(0)));
+//        assertEquals("Guitarras: 1", getCategoriaQuantidade(resultados.get(1)));
+//        assertEquals("Pedais: 2", getCategoriaQuantidade(resultados.get(2)));
+//        assertEquals("Instrumentos de Sopro: 2", getCategoriaQuantidade(resultados.get(3)));
 //    }
+    
     
     
     //    @Test
