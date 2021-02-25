@@ -1,5 +1,7 @@
-br\com\projetodescorp\test\AtorJPQL.class
-br\com\projetodescorp\test\AtorTest.class
-br\com\projetodescorp\test\TeatroTest.class
-br\com\projetodescorp\test\ContratoTest.class
-br\com\projetodescorp\test\DiretorTest.class
+br/com/projetodescorp/test/TeatroTest.class
+br/com/projetodescorp/test/ContratoTest.class
+br/com/projetodescorp/test/DiretorTest.class
+br/com/projetodescorp/test/TeatroJPQL.class
+br/com/projetodescorp/test/DiretorJpqlTest.class
+br/com/projetodescorp/test/AtorJPQL.class
+br/com/projetodescorp/test/AtorTest.class
