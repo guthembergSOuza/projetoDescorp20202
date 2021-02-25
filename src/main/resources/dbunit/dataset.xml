@@ -19,6 +19,9 @@
    <DIRETOR companhia_de_teatro="Teatro em Foco" email="heitor.f@gmail.com" login="heitor.f" nome="Heitor Franca" senha="hh123" tipodiretor="1" />
    <DIRETOR companhia_de_teatro="Teatro em Foco" email="lara.r@gmail.com" login="lara.r" nome="Lara Ramos" senha="ll123" tipodiretor="1" />
    <DIRETOR companhia_de_teatro="Artes Teatras e Cia" email="eduarda.s@gmail.com" login="eduarda.s" nome="Eduarda Souza" senha="ee123" tipodiretor="1" />
+   <DIRETOR companhia_de_teatro="Broadway" email="gerson.brandao@gmail.com" login="gerson.brandao" nome="Gerson Brandao" senha="ee123" tipodiretor="2" />
+   <DIRETOR companhia_de_teatro="Renascer" email="jorge.vercillo@gmail.com" login="jorge.vercillo" nome="Jorge Vercillo" senha="ee123" tipodiretor="2" />
+   <DIRETOR companhia_de_teatro="Proerd" email="j.vercillo@gmail.com" login="j.vercillo" nome="Jorge Vercillo" senha="ee123" tipodiretor="2" />
    <!-- Fim Diretores -->
    
    <!-- Teatro -->
