@@ -1,13 +1,19 @@
 package br.com.projetodescorp.model;
 
 import java.io.Serializable;
+import java.util.List;
 import java.util.Objects;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 /**
@@ -16,6 +22,14 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name="TEATRO")
+@NamedQueries(
+        {
+            @NamedQuery(
+                    name = "Teatro.PorCidade",
+                    query = "SELECT t FROM Teatro t WHERE t.endereco.cidade LIKE :cidade"
+            )
+        }
+)
 public class Teatro implements Serializable {
     
     @Id
@@ -28,6 +42,17 @@ public class Teatro implements Serializable {
     private int quantidadeLugares;
     @Embedded
     private Endereco endereco;
+    
+    @OneToMany(mappedBy = "teatro", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    private List<Espetaculo> espetaculos;
+
+    public List<Espetaculo> getEspetaculos() {
+        return espetaculos;
+    }
+
+    public void setEspetaculos(List<Espetaculo> espetaculos) {
+        this.espetaculos = espetaculos;
+    }
 
     public Long getId() {
         return id;
