@@ -58,11 +58,5 @@ public abstract class GenericTest {
         em.close();
     }
     
-    protected Date getData(Integer dia, Integer mes, Integer ano) {
-        Calendar c = Calendar.getInstance();
-        c.set(Calendar.YEAR, ano);
-        c.set(Calendar.MONTH, mes);
-        c.set(Calendar.DAY_OF_MONTH, dia);
-        return c.getTime();
-    }
+    
 }

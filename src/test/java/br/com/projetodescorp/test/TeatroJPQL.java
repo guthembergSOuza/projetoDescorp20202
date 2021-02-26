@@ -58,17 +58,18 @@ public class TeatroJPQL extends GenericTest {
         TypedQuery<Teatro> query = em.createQuery(
                 "SELECT teatro FROM Teatro teatro WHERE teatro.id in (select espetaculo.teatro.id from Espetaculo espetaculo where espetaculo.dataInicio < :dataEspetaculo and espetaculo.dataFim > :dataEspetaculo)",
                 Teatro.class);
-        query.setParameter("dataEspetaculo",this.getData(10, 1, 2020) );
+        query.setParameter("dataEspetaculo", this.getData(10, 1, 2020) );
         List<Teatro> teatros = query.getResultList();
         assertEquals(3, teatros.size());
 
     }
     
-    protected Date getData(Integer dia, Integer mes, Integer ano) {
+    public Date getData(Integer dia, Integer mes, Integer ano) {
         Calendar c = Calendar.getInstance();
         c.set(Calendar.YEAR, ano);
         c.set(Calendar.MONTH, mes);
         c.set(Calendar.DAY_OF_MONTH, dia);
         return c.getTime();
     }
+    
 }
