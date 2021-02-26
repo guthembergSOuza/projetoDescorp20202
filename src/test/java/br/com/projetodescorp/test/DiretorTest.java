@@ -37,4 +37,13 @@ public class DiretorTest extends GenericTest {
         assertEquals("thiago.a@gmail.com", diretor.getEmail());
        
     }
+    
+    @Test
+    public void atualizarDiretor() {
+    }
+
+    @Test
+    public void deletarDiretor() {
+    }
+    
 }

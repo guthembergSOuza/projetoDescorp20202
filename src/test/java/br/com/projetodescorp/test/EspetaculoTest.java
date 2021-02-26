@@ -57,5 +57,13 @@ public class EspetaculoTest extends GenericTest{
        
     }
     
+    @Test
+    public void atualizarEspetaculo() {
+    }
+
+    @Test
+    public void deletarEspetaculo() {
+    }
+    
     
 }

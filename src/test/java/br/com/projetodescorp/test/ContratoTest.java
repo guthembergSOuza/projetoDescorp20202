@@ -39,4 +39,12 @@ public class ContratoTest extends GenericTest {
         assertEquals("Lucas Marques", contrato1.getAtor().getNome());
     }
     
+    @Test
+    public void atualizarContrato() {
+    }
+
+    @Test
+    public void deletarContrato() {
+    }
+    
 }

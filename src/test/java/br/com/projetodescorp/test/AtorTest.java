@@ -14,8 +14,8 @@ import static org.junit.Assert.*;
  *
  * @author taoal
  */
-public class AtorTest extends GenericTest{
-    
+public class AtorTest extends GenericTest {
+
     @Test
     public void persistirAtor() {
         Ator ator = new Ator();
@@ -33,7 +33,6 @@ public class AtorTest extends GenericTest{
         em.flush();
 
         //assertNotNull(ator.getId());
-
     }
 
     private Endereco criarEndereco() {
@@ -47,15 +46,22 @@ public class AtorTest extends GenericTest{
         endereco.setNumero(550);
         return endereco;
     }
- 
-    @org.junit.Test
+
+    @Test
     public void consultarAtor() {
         Ator ator = em.find(Ator.class, 1L);
-        
+
         //procurar Teatro de Santa Isabel - bairro = Santo Antônio
         //assertEquals("victor Lins", ator.getNome());
         //assertEquals("v.lins@gmail.com", ator.getEmail());
-       
     }
-    
+
+    @Test
+    public void atualizarAtor() {
+    }
+
+    @Test
+    public void deletarAtor() {
+    }
+
 }

@@ -73,4 +73,12 @@ public class TeatroTest extends GenericTest {
         assertEquals("Santo Antônio", teatro.getEndereco().getBairro());
        
     }
+    
+    @Test
+    public void atualizarTeatro() {
+    }
+
+    @Test
+    public void deletarTeatro() {
+    }
 }
