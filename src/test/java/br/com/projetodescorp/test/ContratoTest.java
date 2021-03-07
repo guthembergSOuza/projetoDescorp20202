@@ -28,12 +28,9 @@ public class ContratoTest extends GenericTest {
 
     }
 
-    @org.junit.Test
+    @Test
     public void consultarContrato() {
         Contrato contrato1 = em.find(Contrato.class, 11L);
-
-        //procurar Teatro de Santa Isabel - bairro = Santo Antônio
-        //assertEquals("Victor Lins", contrato1.getAtor().getNome());
         contrato1 = em.find(Contrato.class, 3L);
 
         assertEquals("Lucas Marques", contrato1.getAtor().getNome());
