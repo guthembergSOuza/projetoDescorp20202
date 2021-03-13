@@ -16,52 +16,84 @@ import static org.junit.Assert.*;
  */
 public class AtorTest extends GenericTest {
 
+    Endereco mEndereco = new Endereco();
+
     @Test
-    public void persistirAtor() {
+    public void criarAtor() {
+        logger.info("Executando criarAtor()");
         Ator ator = new Ator();
         //Dados de usuário
-        ator.setNome("Fulano da Silva Junior3");
+        ator.setNome("Fulano da Silva Junior");
         ator.setEmail("FulanodaSilva@gmail.com");
         ator.setLogin("FulanodaSilva");
         ator.setSenha("Senha1234");
         //Dados de artor
         ator.setDrt("80825728410");
         ator.setDisponivel(Boolean.TRUE);
-        ator.setEndereco(criarEndereco());
+        ator.setEndereco(mEndereco.criarEndereco());
 
         em.persist(ator);
         em.flush();
-
-        //assertNotNull(ator.getId());
-    }
-
-    private Endereco criarEndereco() {
-        Endereco endereco = new Endereco();
-        endereco.setRua("Rua Iolanda Rodrigues Sobral");
-        endereco.setBairro("Iputinga");
-        endereco.setComplemento("A");
-        endereco.setCidade("Recife");
-        endereco.setUf("PE");
-        endereco.setCep("50690-220");
-        endereco.setNumero(550);
-        return endereco;
-    }
-
-    @Test
-    public void consultarAtor() {
-        Ator ator = em.find(Ator.class, 1L);
-
-        //procurar Teatro de Santa Isabel - bairro = Santo Antônio
-        //assertEquals("victor Lins", ator.getNome());
-        //assertEquals("v.lins@gmail.com", ator.getEmail());
     }
 
     @Test
     public void atualizarAtor() {
+        logger.info("Executando atualizarAtor()");
+
+        Ator ator = em.find(Ator.class, 5L);
+
+        ator.setNome("Nome Ator Atualizado");
+        ator.setEmail("emailAtualizado@gmail.com");
+
+        em.flush();
+
+        assertEquals("Nome Ator Atualizado", ator.getNome());
+        assertEquals("emailAtualizado@gmail.com", ator.getEmail());
+    }
+
+    @Test
+    public void atualizarAtorMerge() {
+        logger.info("Executando atualizarAtorMerge()");
+
+        Ator ator = em.find(Ator.class, 5L);
+
+        ator.setNome("Nome Ator Atualizado Merge");
+        ator.setEmail("emailAtualizadoMerge@gmail.com");
+
+        em.clear();
+        em.merge(ator);
+        em.flush();
+
+        ator = em.find(Ator.class, 5L);
+
+        assertEquals("Nome Ator Atualizado Merge", ator.getNome());
+        assertEquals("emailAtualizadoMerge@gmail.com", ator.getEmail());
+
+    }
+
+    @Test
+    public void consultarAtor() {
+        logger.info("Executando consultarAtor()");
+        Ator ator = em.find(Ator.class, 5L);
+
+        assertEquals("Nome Ator Atualizado", ator.getNome());
+
     }
 
     @Test
     public void deletarAtor() {
+        logger.info("Executando deletarAtor()");
+        Ator ator = em.find(Ator.class, 6L);
+
+        assertNotNull(ator);
+
+        em.remove(ator);
+        em.flush();
+
+        ator = em.find(Ator.class, 6L);
+
+        assertEquals(null, ator);
+
     }
 
 }

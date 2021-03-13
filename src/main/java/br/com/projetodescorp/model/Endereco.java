@@ -86,5 +86,20 @@ public class Endereco implements Serializable {
     public void setComplemento(String complemento) {
         this.complemento = complemento;
     }
+    
+    public Endereco criarEndereco() {
+
+        Endereco endereco = new Endereco();
+        endereco.setRua("Rua Iolanda Rodrigues Sobral");
+        endereco.setBairro("Iputinga");
+        endereco.setComplemento("A");
+        endereco.setCidade("Recife");
+        endereco.setUf("PE");
+        endereco.setCep("50690-220");
+        endereco.setNumero(550);
+
+        return endereco;
+
+    }
 
 }

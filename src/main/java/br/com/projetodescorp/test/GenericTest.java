@@ -31,7 +31,7 @@ public abstract class GenericTest {
     protected static Logger logger;
 
     @BeforeClass
-    public static void setUpClass() throws DatabaseUnitException {
+    public static void setUpClass() throws DatabaseUnitException {        
         logger = Logger.getGlobal();
         logger.setLevel(Level.INFO);                
         emf = Persistence.createEntityManagerFactory("projetodescorp20201");
@@ -55,7 +55,8 @@ public abstract class GenericTest {
         if (!et.getRollbackOnly()) {
             et.commit();
         }
-        em.close();
+        em.clear();
+        em.close();                
     }
     
     

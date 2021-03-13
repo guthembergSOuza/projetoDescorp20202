@@ -7,7 +7,7 @@
     <class>br.com.projetodescorp.model.Teatro</class>
     <class>br.com.projetodescorp.model.Espetaculo</class>
     <class>br.com.projetodescorp.model.Contrato</class>
-    <exclude-unlisted-classes>false</exclude-unlisted-classes>
+    <exclude-unlisted-classes>true</exclude-unlisted-classes>
     <properties>
       <property name="javax.persistence.jdbc.driver" value="org.apache.derby.jdbc.ClientDriver"/>
       <property name="javax.persistence.jdbc.url" value="jdbc:derby://localhost:1527/projetodescorp20201;create=true"/>
