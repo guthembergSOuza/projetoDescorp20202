@@ -11,7 +11,7 @@ import org.junit.Test;
  * @author guthemberg
  */
 public class DiretorTest extends GenericTest {
-    
+
     @Test
     public void persistirDiretor() {
         Diretor diretor = new Diretor();
@@ -27,17 +27,17 @@ public class DiretorTest extends GenericTest {
         assertNotNull(diretor.getId());
 
     }
-    
+
     @org.junit.Test
     public void consultarDiretor() {
         Diretor diretor = em.find(Diretor.class, 1L);
-        
+
         //procurar Teatro de Santa Isabel - bairro = Santo Antônio
         assertEquals("Thiago Antonio", diretor.getNome());
         assertEquals("thiago.a@gmail.com", diretor.getEmail());
-       
+
     }
-    
+
     @Test
     public void atualizarDiretor() {
     }
@@ -45,5 +45,5 @@ public class DiretorTest extends GenericTest {
     @Test
     public void deletarDiretor() {
     }
-    
+
 }

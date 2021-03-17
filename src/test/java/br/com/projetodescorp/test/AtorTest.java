@@ -59,7 +59,7 @@ public class AtorTest extends GenericTest {
 
         ator.setNome("Nome Ator Atualizado Merge");
         ator.setEmail("emailAtualizadoMerge@gmail.com");
-
+        
         em.clear();
         em.merge(ator);
         em.flush();

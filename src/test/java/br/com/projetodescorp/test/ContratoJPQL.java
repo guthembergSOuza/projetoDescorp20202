@@ -17,17 +17,17 @@ import org.junit.Test;
  * @author guthemberg
  */
 public class ContratoJPQL extends GenericTest {
-    
-    @Test
-    public void consultarAtoresComContrato() {
-        logger.info("Executando consultarAtoresComContrato()");
-        TypedQuery<Object[]> query;
-        query = em.createQuery(
-                "SELECT distinct(a.nome) FROM Contrato c LEFT JOIN c.ator a",
-                Object[].class);
-        List<Object[]> atores = query.getResultList();
-        //Atores que possuem contratos
-        assertEquals(5, atores.size());
-    }
-    
+//    
+//    @Test
+//    public void consultarAtoresComContrato() {
+//        logger.info("Executando consultarAtoresComContrato()");
+//        TypedQuery<Object[]> query;
+//        query = em.createQuery(
+//                "SELECT distinct(a.nome) FROM Contrato c LEFT JOIN c.ator a",
+//                Object[].class);
+//        List<Object[]> atores = query.getResultList();
+//        //Atores que possuem contratos
+//        assertEquals(5, atores.size());
+//    }
+//    
 }

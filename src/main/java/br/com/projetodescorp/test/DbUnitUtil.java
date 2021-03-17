@@ -29,6 +29,7 @@ public class DbUnitUtil {
     private static final EntityManagerFactory emf
             = Persistence.createEntityManagerFactory("projetodescorp20201");
 
+    @SuppressWarnings("UseSpecificCatch")
     public static void inserirDados() throws DatabaseUnitException {
         Connection conn = null;
         IDatabaseConnection db_conn = null;

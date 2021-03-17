@@ -3,6 +3,7 @@ br\com\projetodescorp\test\AtorTest.class
 br\com\projetodescorp\test\EspetaculoTest.class
 br\com\projetodescorp\test\ContratoJPQL.class
 br\com\projetodescorp\test\ContratoTest.class
+br\com\projetodescorp\test\AtorValidationTest.class
 br\com\projetodescorp\test\DiretorJPQL.class
 br\com\projetodescorp\test\AtorJPQL.class
 br\com\projetodescorp\test\TeatroTest.class

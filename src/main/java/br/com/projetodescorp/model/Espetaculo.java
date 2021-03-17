@@ -27,7 +27,7 @@ import java.util.Objects;
 public class Espetaculo implements Serializable {
 
     @Id
-    @Column(name="id")
+    @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
@@ -161,5 +161,5 @@ public class Espetaculo implements Serializable {
         }
         return true;
     }
-
+    
 }

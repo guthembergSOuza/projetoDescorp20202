@@ -29,9 +29,9 @@
     <!-- Teatro -->
     <TEATRO nome="Teatro de Santa Isabel" quantidade_lugares="1000" bairro="Santo Antônio" cep="50010040" cidade="Recife" complemento="A" numero="233" rua="Praça da República" uf="PE" />
     <TEATRO nome="Teatro Barreto Júnior" quantidade_lugares="1000" bairro="Pina" cep="51011040" cidade="Recife" complemento="Sala 2" numero="0" rua="R. Est. Jeremias Bastos" uf="PE" />
-    <TEATRO nome = "Teatro Guararapes" quantidade_lugares="1000"  bairro="Salgadinho" cep="53111970" cidade="Olinda" complemento="Centro de Convenções de Pernambuco" numero="0" rua="Av. Prof. Andrade Bezerra" uf="PE" />
-    <TEATRO nome = "Teatro da UFPE" quantidade_lugares="1000"  bairro="Cidade Universitária" cep="50740540" cidade="Recife" complemento="Sala 2" numero="100" rua="Campus UFPE" uf="PE" />
-    <TEATRO nome = "Teatro Apolo-Hermilo" quantidade_lugares="1000"  bairro="Recife" cep="50030220" cidade="Recife" complemento="Esquina" numero="121" rua="R. do Apolo" uf="PE" />
+    <TEATRO nome="Teatro Guararapes" quantidade_lugares="1000"  bairro="Salgadinho" cep="53111970" cidade="Olinda" complemento="Centro de Convenções de Pernambuco" numero="0" rua="Av. Prof. Andrade Bezerra" uf="PE" />
+    <TEATRO nome="Teatro da UFPE" quantidade_lugares="1000"  bairro="Cidade Universitária" cep="50740540" cidade="Recife" complemento="Sala 2" numero="100" rua="Campus UFPE" uf="PE" />
+    <TEATRO nome="Teatro Apolo-Hermilo" quantidade_lugares="1000"  bairro="Recife" cep="50030220" cidade="Recife" complemento="Esquina" numero="121" rua="R. do Apolo" uf="PE" />
     <!-- Fim Teatro -->
    
     <!-- Espetaculo -->
@@ -48,8 +48,7 @@
     <CONTRATO cache="1000" id_ator="3" />
     <CONTRATO cache="1000" id_ator="4" />
     <CONTRATO cache="1000" id_ator="5" />
-   
-   
+      
     <CONTRATO cache="2000" id_ator="1" />
     <CONTRATO cache="2000" id_ator="2" />
     <CONTRATO cache="2000" id_ator="3" />
