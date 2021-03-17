@@ -21,6 +21,14 @@ import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
+import javax.persistence.Column;
+import javax.persistence.Embeddable;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
 
 /**
  *
@@ -49,8 +57,13 @@ public class Diretor extends Usuario implements Serializable {
     
     @OneToMany(mappedBy = "diretor", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private List<Espetaculo> esptetaculosDirigidos;
-
-    @Column(name="tipodiretor")
+    
+    @NotBlank
+    //@ValidaTipoDiretor
+    @Pattern(regexp = "[1-4]{1}", message = "{br.com.projetodescorp.model.Diretor.tipoDiretor}")
+    @Size(min = 1, max = 1)
+    @Column(name = "tipoDiretor")
+    
     private TipoDiretor tipoDiretor;
     
     public Long getId() {
