@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package br.com.projetodescorp.model;
 
 import java.io.Serializable;
@@ -30,10 +25,7 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
-/**
- *
- * @author guthemberg
- */
+
 @Entity
 @Table(name = "DIRETOR")
 @DiscriminatorValue(value = "D")
@@ -52,18 +44,16 @@ public class Diretor extends Usuario implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     
+    @NotNull
+    @ValidaCompanhiaDiretor
     @Column(name="companhia_de_teatro",nullable = false)
     private String companhiaDeTeatro;
     
     @OneToMany(mappedBy = "diretor", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    private List<Espetaculo> esptetaculosDirigidos;
+    private List<Espetaculo> espetaculosDirigidos;
     
     @NotBlank
-    //@ValidaTipoDiretor
-    @Pattern(regexp = "[1-4]{1}", message = "{br.com.projetodescorp.model.Diretor.tipoDiretor}")
-    @Size(min = 1, max = 1)
     @Column(name = "tipoDiretor")
-    
     private TipoDiretor tipoDiretor;
     
     public Long getId() {
@@ -83,11 +73,11 @@ public class Diretor extends Usuario implements Serializable {
     }
 
     public List<Espetaculo> getEsptetaculosDirigidos() {
-        return esptetaculosDirigidos;
+        return espetaculosDirigidos;
     }
 
-    public void setEsptetaculosDirigidos(List<Espetaculo> esptetaculosDirigidos) {
-        this.esptetaculosDirigidos = esptetaculosDirigidos;
+    public void setEspetaculosDirigidos(List<Espetaculo> espetaculosDirigidos) {
+        this.espetaculosDirigidos = espetaculosDirigidos;
     }
 
     public TipoDiretor getTipoDiretor() {
