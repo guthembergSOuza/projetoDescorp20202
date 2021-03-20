@@ -29,9 +29,9 @@ public class EspetaculoTest extends GenericTest{
         espetaculo.setDescricao("Peça baseada na vida de quem ainda está presente em lembranças");
         espetaculo.setDataInicio(this.getData(25, 4, 2021));
         espetaculo.setDataFim(this.getData(27, 4, 2021));
-        espetaculo.setDiretor(em.createNamedQuery("Diretor.PorId", Diretor.class).setParameter("id", 1).getResultList().get(0));
+        espetaculo.setDiretor(em.createNamedQuery("Diretor.PorId", Diretor.class).setParameter("id", 31).getResultList().get(0));
         espetaculo.setEmCartaz(Boolean.TRUE);
-        espetaculo.setTeatro(em.createNamedQuery("Teatro.PorId", Teatro.class).setParameter("id", 1).getResultList().get(0));
+        espetaculo.setTeatro(em.createNamedQuery("Teatro.PorId", Teatro.class).setParameter("id", 31).getResultList().get(0));
         
         em.persist(espetaculo);
         em.flush();
@@ -51,7 +51,7 @@ public class EspetaculoTest extends GenericTest{
     @Test
     public void consultarEspetaculos() {
         
-        Espetaculo esp = em.find(Espetaculo.class, 1L);
+        Espetaculo esp = em.find(Espetaculo.class, 31L);
         
         assertEquals("O Beijo no Asfalto", esp.getTitulo());
        

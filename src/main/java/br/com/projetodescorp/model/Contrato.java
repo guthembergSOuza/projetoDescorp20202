@@ -22,10 +22,11 @@ import javax.persistence.Table;
  * @author gersonbrandao
  */
 @Entity
-@Table(name = "Contrato")
+@Table(name = "CONTRATO")
 public class Contrato implements Serializable {
 
     @Id
+    @Column(name="id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @Column(name = "cache", nullable = false)
@@ -61,7 +62,7 @@ public class Contrato implements Serializable {
     @Override
     public int hashCode() {
         int hash = 3;
-        hash = 47 * hash + Objects.hashCode(this.id);
+        hash = 79 * hash + Objects.hashCode(this.id);
         return hash;
     }
 
@@ -82,5 +83,7 @@ public class Contrato implements Serializable {
         }
         return true;
     }
+
+    
 
 }

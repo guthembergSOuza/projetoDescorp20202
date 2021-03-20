@@ -47,7 +47,7 @@ public class Teatro implements Serializable {
     @Embedded
     private Endereco endereco;
     
-    @OneToMany(mappedBy = "teatro", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "teatro", fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Espetaculo> espetaculos;
 
     public List<Espetaculo> getEspetaculos() {

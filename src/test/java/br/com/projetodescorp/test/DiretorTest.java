@@ -26,7 +26,7 @@ public class DiretorTest extends GenericTest {
     
     @org.junit.Test
     public void consultarDiretor() {
-        Diretor diretor = em.find(Diretor.class, 1L);
+        Diretor diretor = em.find(Diretor.class, 31L);
         
         //procurar Teatro de Santa Isabel - bairro = Santo Antônio
         assertEquals("Thiago Antonio", diretor.getNome());

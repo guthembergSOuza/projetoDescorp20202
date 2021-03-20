@@ -50,7 +50,7 @@ public class AtorTest extends GenericTest{
  
     @org.junit.Test
     public void consultarAtor() {
-        Ator ator = em.find(Ator.class, 1L);
+        Ator ator = em.find(Ator.class, 31L);
         
         //procurar Teatro de Santa Isabel - bairro = Santo Antônio
         //assertEquals("victor Lins", ator.getNome());

@@ -75,7 +75,7 @@ public class AtorJPQL extends GenericTest {
         logger.info("Executando atorContratos()");
         TypedQuery<Contrato> query = em.createQuery(
                 "SELECT contrato FROM Contrato contrato WHERE contrato.ator.id = :id", Contrato.class);
-        query.setParameter("id", 1);
+        query.setParameter("id", 31);
 
         List<Contrato> contratos = query.getResultList();
 

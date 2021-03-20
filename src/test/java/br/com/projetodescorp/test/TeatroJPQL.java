@@ -45,7 +45,7 @@ public class TeatroJPQL extends GenericTest {
         TypedQuery<Teatro> query = em.createQuery(
                 "SELECT teatro FROM Teatro teatro WHERE teatro.id in (select espetaculo.teatro.id from Espetaculo espetaculo) and  teatro.id = :idTeatro",
                 Teatro.class);
-        query.setParameter("idTeatro", 1);
+        query.setParameter("idTeatro", 31);
 
         List<Teatro> teatros = query.getResultList();
         assertEquals(1, teatros.size());
