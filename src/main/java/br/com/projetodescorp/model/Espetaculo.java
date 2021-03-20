@@ -62,7 +62,7 @@ public class Espetaculo implements Serializable {
     private Date dataFim;
 
     @ManyToOne(fetch = FetchType.EAGER, optional = false)
-    @JoinColumn(name = "ID_TEATRO", referencedColumnName = "ID", nullable = false)
+    @JoinColumn(name = "ID_TEATRO", referencedColumnName = "ID")
     private Teatro teatro;
 
     public Date getDataInicio() {
