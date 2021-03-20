@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package br.com.projetodescorp.model;
 
 import java.lang.annotation.Documented;
@@ -15,14 +10,12 @@ import javax.validation.Payload;
 
 @Target( {ElementType.FIELD, ElementType.METHOD, ElementType.ANNOTATION_TYPE})
 @Retention(RetentionPolicy.RUNTIME)
-@Constraint(validatedBy = ValidadorTipoDiretor.class)
+@Constraint(validatedBy = ValidadorCompanhiaDiretor.class)
 @Documented
-public class ValidaTipoDiretor {
-    
-    String message() default "{br.com.projetodescorp.model.Diretor.tipoDiretor}";
+public @interface ValidaCompanhiaDiretor {
+    String message() default "{br.com.projetodescorp.model.Diretor.companhiaDeTeatro}";
 
     Class<?>[] groups() default {};
 
     Class<? extends Payload>[] payload() default {};
-    
 }

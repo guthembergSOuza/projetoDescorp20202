@@ -6,10 +6,6 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import org.junit.Test;
 
-/**
- *
- * @author guthemberg
- */
 public class DiretorTest extends GenericTest {
     
     @Test
@@ -23,7 +19,7 @@ public class DiretorTest extends GenericTest {
         diretor.setTipoDiretor(TipoDiretor.MUSICAL);
         em.persist(diretor);
         em.flush();
-
+       
         assertNotNull(diretor.getId());
 
     }
