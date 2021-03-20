@@ -2,9 +2,6 @@ package br.com.projetodescorp.test;
 
 import br.com.projetodescorp.model.Ator;
 import br.com.projetodescorp.model.Contrato;
-import java.util.List;
-import javax.persistence.Query;
-import javax.persistence.TypedQuery;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -36,7 +33,7 @@ public class ContratoTest extends GenericTest {
         Contrato contrato1 = em.find(Contrato.class, 33L);
         contrato1 = em.find(Contrato.class, 33L);
 
-        assertEquals("Lucas Marques", contrato1.getAtor().getNome());
+        assertEquals("Lucas Marques".toUpperCase(), contrato1.getAtor().getNome().toUpperCase());
     }
     
 }

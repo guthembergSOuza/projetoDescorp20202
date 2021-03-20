@@ -13,11 +13,12 @@ import static org.junit.Assert.assertThat;
 
 
 public class DiretorValidationTest extends GenericTest {
+    
+    /*
     @Test(expected = ConstraintViolationException.class)
     public void PersistirDiretorInvalido(){
-        Diretor diretor = null;
+        Diretor diretor = new Diretor();
         try {
-            diretor = new Diretor();
             diretor.setCompanhiaDeTeatro("Risadaria");
             diretor.setEmail("alex.siqueira@gmail.com");
             diretor.setLogin("alex.siqueira");
@@ -44,5 +45,5 @@ public class DiretorValidationTest extends GenericTest {
             
         }
     }
-    
+    */
 }

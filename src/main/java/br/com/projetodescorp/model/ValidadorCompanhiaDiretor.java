@@ -16,6 +16,8 @@ public class ValidadorCompanhiaDiretor implements ConstraintValidator<ValidaComp
         this.companhias.add("Melhores do mundo");
         this.companhias.add("Teatro dos Quatro");
         this.companhias.add("Praxis Dramatica");
+        this.companhias.add("Escola de Teatro de Camaragibe");
+
     }
     
     @Override

@@ -11,11 +11,11 @@ public class DiretorTest extends GenericTest {
     @Test
     public void persistirDiretor() {
         Diretor diretor = new Diretor();
-        diretor.setNome("Lucas Sobral");
+        diretor.setNome("Lucas Sobral Lima");
         diretor.setCompanhiaDeTeatro("Escola de Teatro de Camaragibe");
-        diretor.setEmail("lucas.sobral@gmail.com");
-        diretor.setSenha("123456");
-        diretor.setLogin("lucas.sobral");
+        diretor.setEmail("lucasSS@gmail.com");
+        diretor.setSenha("454121484");
+        diretor.setLogin("lucas.sobralll");
         diretor.setTipoDiretor(TipoDiretor.MUSICAL);
         em.persist(diretor);
         em.flush();
@@ -26,7 +26,7 @@ public class DiretorTest extends GenericTest {
     
     @org.junit.Test
     public void consultarDiretor() {
-        Diretor diretor = em.find(Diretor.class, 31L);
+        Diretor diretor = em.find(Diretor.class, 41L);
         
         //procurar Teatro de Santa Isabel - bairro = Santo Antônio
         assertEquals("Thiago Antonio", diretor.getNome());
