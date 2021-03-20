@@ -66,7 +66,7 @@ public class TeatroTest extends GenericTest {
     
     @Test
     public void consultarTeatro() {
-        Teatro teatro = em.find(Teatro.class, 1L);
+        Teatro teatro = em.find(Teatro.class, 31L);
         
         //procurar Teatro de Santa Isabel - bairro = Santo Antônio
         assertEquals("Teatro de Santa Isabel", teatro.getNome());

@@ -68,7 +68,7 @@ public class DiretorJPQL extends GenericTest{
     public void diretorPorId() {
         logger.info("Executando diretorPorId()");
         TypedQuery<Diretor> query = em.createQuery("SELECT d FROM Diretor d WHERE d.id = ?1", Diretor.class);
-        query.setParameter(1, 8);
+        query.setParameter(1, 38);
         List<Diretor> diretores = query.getResultList();
         assertNotNull(diretores);
         assertEquals(1, diretores.size());

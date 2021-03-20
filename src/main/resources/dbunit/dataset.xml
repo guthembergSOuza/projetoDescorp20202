@@ -2,70 +2,70 @@
 <dataset>
    <!-- Atores -->
    <!-- Usuario id = 1 (ATOR) -->
-   <ATOR nome="Victor Lins" email="v.lins@gmail.com" login="v.lins" senha="123456" drt="20200102" disponivel="1" numero="100" rua="Rua Mirandiba" bairro="Dois Irmaos" cidade="Recife" uf="PE" cep="54730080" complemento="A" />
+   <ATOR id="31" nome="Victor Lins" email="v.lins@gmail.com" login="v.lins" senha="123456" drt="20200102" disponivel="1" numero="100" rua="Rua Mirandiba" bairro="Dois Irmaos" cidade="Recife" uf="PE" cep="54730080" complemento="A" />
    <!-- Usuario id = 2 (ATOR) -->
-   <ATOR nome="Nathália Silva" email="nat.silva@gmail.com" login="nat.silva" senha="3216654" drt="20200103" disponivel="1" numero="20" rua="Rua Boanerges Pereira" bairro="Engenho do Meio" cidade="Recife" uf="PE" cep="54730080" complemento="A" />
+   <ATOR id="32" nome="Nathália Silva" email="nat.silva@gmail.com" login="nat.silva" senha="3216654" drt="20200103" disponivel="1" numero="20" rua="Rua Boanerges Pereira" bairro="Engenho do Meio" cidade="Recife" uf="PE" cep="54730080" complemento="A" />
    <!-- Usuario id = 3 (ATOR) -->
-   <ATOR nome="Lucas Marques" email="lucas.m@gmail.com" login="lucas.m" senha="8754866" drt="20200104" disponivel="1" numero="55" rua="Av Nova Descoberta" bairro="Iputinga" cidade="Recife" uf="PE" cep="54730080" complemento="A" />
+   <ATOR id="33" nome="Lucas Marques" email="lucas.m@gmail.com" login="lucas.m" senha="8754866" drt="20200104" disponivel="1" numero="55" rua="Av Nova Descoberta" bairro="Iputinga" cidade="Recife" uf="PE" cep="54730080" complemento="A" />
     <!-- Usuario id = 4 (ATOR) -->
-   <ATOR nome="Augusta Alburquerque" email="augusta.alb@gmail.com" login="augusta.alb" senha="818147" drt="20190301" disponivel="1" numero="60" rua="Rua Lima" bairro="Boa Vista" cidade="Recife" uf="PE" cep="54730080" complemento="A" />
+   <ATOR id="34" nome="Augusta Alburquerque" email="augusta.alb@gmail.com" login="augusta.alb" senha="818147" drt="20190301" disponivel="1" numero="60" rua="Rua Lima" bairro="Boa Vista" cidade="Recife" uf="PE" cep="54730080" complemento="A" />
    <!-- Usuario id = 5 (ATOR) -->
-   <ATOR nome="Marceline Pereira" email="marceline.per@gmail.com" login="arceline.per" senha="963258741" drt="20190202" disponivel="1" numero="7" rua="Rua Lomoeiro" bairro="Várzea" cidade="Recife" uf="PE" cep="54730080" complemento="A" />
+   <ATOR id="35" nome="Marceline Pereira" email="marceline.per@gmail.com" login="arceline.per" senha="963258741" drt="20190202" disponivel="1" numero="7" rua="Rua Lomoeiro" bairro="Várzea" cidade="Recife" uf="PE" cep="54730080" complemento="A" />
    <!-- Fim Usuarios -->
    
    <!-- Diretores -->
-   <DIRETOR companhia_de_teatro="Cia do Teatro" email="thiago.a@gmail.com" login="thiago.a" nome="Thiago Antonio" senha="tt123" tipodiretor="1" />
-   <DIRETOR companhia_de_teatro="Cia do Ator" email="emmanuel.m@gmail.com" login="emmanuel.m" nome="Emmanuel Matheus" senha="ee123" tipodiretor="1" />
-   <DIRETOR companhia_de_teatro="Teatro em Foco" email="heitor.f@gmail.com" login="heitor.f" nome="Heitor Franca" senha="hh123" tipodiretor="1" />
-   <DIRETOR companhia_de_teatro="Teatro em Foco" email="lara.r@gmail.com" login="lara.r" nome="Lara Ramos" senha="ll123" tipodiretor="1" />
-   <DIRETOR companhia_de_teatro="Artes Teatras e Cia" email="eduarda.s@gmail.com" login="eduarda.s" nome="Eduarda Souza" senha="ee123" tipodiretor="1" />
-   <DIRETOR companhia_de_teatro="Broadway" email="gerson.brandao@gmail.com" login="gerson.brandao" nome="Gerson Brandao" senha="ee123" tipodiretor="2" />
-   <DIRETOR companhia_de_teatro="Renascer" email="jorge.vercillo@gmail.com" login="jorge.vercillo" nome="Jorge Vercillo" senha="ee123" tipodiretor="2" />
-   <DIRETOR companhia_de_teatro="Proerd" email="j.vercillo@gmail.com" login="j.vercillo" nome="Jorge Vercillo" senha="ee123" tipodiretor="2" />
+   <DIRETOR id="31" companhia_de_teatro="Cia do Teatro" email="thiago.a@gmail.com" login="thiago.a" nome="Thiago Antonio" senha="tt123" tipodiretor="1" />
+   <DIRETOR id="32" companhia_de_teatro="Cia do Ator" email="emmanuel.m@gmail.com" login="emmanuel.m" nome="Emmanuel Matheus" senha="ee123" tipodiretor="1" />
+   <DIRETOR id="33" companhia_de_teatro="Teatro em Foco" email="heitor.f@gmail.com" login="heitor.f" nome="Heitor Franca" senha="hh123" tipodiretor="1" />
+   <DIRETOR id="34" companhia_de_teatro="Teatro em Foco" email="lara.r@gmail.com" login="lara.r" nome="Lara Ramos" senha="ll123" tipodiretor="1" />
+   <DIRETOR id="35" companhia_de_teatro="Artes Teatras e Cia" email="eduarda.s@gmail.com" login="eduarda.s" nome="Eduarda Souza" senha="ee123" tipodiretor="1" />
+   <DIRETOR id="36" companhia_de_teatro="Broadway" email="gerson.brandao@gmail.com" login="gerson.brandao" nome="Gerson Brandao" senha="ee123" tipodiretor="2" />
+   <DIRETOR id="37" companhia_de_teatro="Renascer" email="jorge.vercillo@gmail.com" login="jorge.vercillo" nome="Jorge Vercillo" senha="ee123" tipodiretor="2" />
+   <DIRETOR id="38" companhia_de_teatro="Proerd" email="j.vercillo@gmail.com" login="j.vercillo" nome="Jorge Vercillo" senha="ee123" tipodiretor="2" />
    <!-- Fim Diretores -->
    
    <!-- Teatro -->
-   <TEATRO nome="Teatro de Santa Isabel" quantidade_lugares="1000" bairro="Santo Antônio" cep="50010040" cidade="Recife" complemento="A" numero="233" rua="Praça da República" uf="PE" />
-   <TEATRO nome="Teatro Barreto Júnior" quantidade_lugares="1000" bairro="Pina" cep="51011040" cidade="Recife" complemento="Sala 2" numero="0" rua="R. Est. Jeremias Bastos" uf="PE" />
-   <TEATRO nome = "Teatro Guararapes" quantidade_lugares="1000"  bairro="Salgadinho" cep="53111970" cidade="Olinda" complemento="Centro de Convenções de Pernambuco" numero="0" rua="Av. Prof. Andrade Bezerra" uf="PE" />
-   <TEATRO nome = "Teatro da UFPE" quantidade_lugares="1000"  bairro="Cidade Universitária" cep="50740540" cidade="Recife" complemento="Sala 2" numero="100" rua="Campus UFPE" uf="PE" />
-   <TEATRO nome = "Teatro Apolo-Hermilo" quantidade_lugares="1000"  bairro="Recife" cep="50030220" cidade="Recife" complemento="Esquina" numero="121" rua="R. do Apolo" uf="PE" />
+   <TEATRO id="31" nome="Teatro de Santa Isabel" quantidade_lugares="1000" bairro="Santo Antônio" cep="50010040" cidade="Recife" complemento="A" numero="233" rua="Praça da República" uf="PE" />
+   <TEATRO id="32" nome="Teatro Barreto Júnior" quantidade_lugares="1000" bairro="Pina" cep="51011040" cidade="Recife" complemento="Sala 2" numero="0" rua="R. Est. Jeremias Bastos" uf="PE" />
+   <TEATRO id="33" nome = "Teatro Guararapes" quantidade_lugares="1000"  bairro="Salgadinho" cep="53111970" cidade="Olinda" complemento="Centro de Convenções de Pernambuco" numero="0" rua="Av. Prof. Andrade Bezerra" uf="PE" />
+   <TEATRO id="34" nome = "Teatro da UFPE" quantidade_lugares="1000"  bairro="Cidade Universitária" cep="50740540" cidade="Recife" complemento="Sala 2" numero="100" rua="Campus UFPE" uf="PE" />
+   <TEATRO id="35" nome = "Teatro Apolo-Hermilo" quantidade_lugares="1000"  bairro="Recife" cep="50030220" cidade="Recife" complemento="Esquina" numero="121" rua="R. do Apolo" uf="PE" />
    <!-- Fim Teatro -->
    
    <!-- Espetaculo -->
-   <ESPETACULO titulo="O Beijo no Asfalto" descricao="O Beijo no Asfalto é uma peça de teatro brasileira de Nelson Rodrigues, publicada em 1960" dt_inicio="2020-01-10 18:30:00" dt_fim="2020-02-15 18:30:00" em_cartaz="1" id_diretor="1" id_teatro="1" />
-   <ESPETACULO titulo="Geni" descricao="A peca retrata a vida sofrida de Geni apos a partida do Trampolim" dt_inicio="2020-01-10 18:30:00" dt_fim="2020-02-11 18:30:00" em_cartaz="1" id_diretor="2" id_teatro="2" />
-   <ESPETACULO titulo="A Caverna" descricao="Ser ou não ser, eis a questão! O que é mais certo a se fazer? Sofrer na alma as flechas da culpa, do passado, ou fazer uma revolução?" dt_inicio="2020-01-10 18:30:00" dt_fim="2020-02-20 18:30:00" em_cartaz="1" id_diretor="3" id_teatro="3" />
-   <ESPETACULO titulo="Alice" descricao="Peça infantil - historia de Alice" dt_inicio="2020-01-10 18:30:00" dt_fim="2020-01-20 18:30:00" em_cartaz="1"  id_diretor="4" id_teatro="4" />
-   <ESPETACULO titulo="O Mundo de Mônica" descricao="Monica é uma garota cega que enxerga as coisas do seu modo" dt_inicio="2020-01-10 18:30:00" dt_fim="2020-01-20 18:30:00" em_cartaz="1" id_diretor="5" id_teatro="5"/>
+   <ESPETACULO id="31" titulo="O Beijo no Asfalto" descricao="O Beijo no Asfalto é uma peça de teatro brasileira de Nelson Rodrigues, publicada em 1960" dt_inicio="2020-01-10 18:30:00" dt_fim="2020-02-15 18:30:00" em_cartaz="1" id_diretor="31" id_teatro="31" />
+   <ESPETACULO id="32" titulo="Geni" descricao="A peca retrata a vida sofrida de Geni apos a partida do Trampolim" dt_inicio="2020-01-10 18:30:00" dt_fim="2020-02-11 18:30:00" em_cartaz="1" id_diretor="32" id_teatro="32" />
+   <ESPETACULO id="33" titulo="A Caverna" descricao="Ser ou não ser, eis a questão! O que é mais certo a se fazer? Sofrer na alma as flechas da culpa, do passado, ou fazer uma revolução?" dt_inicio="2020-01-10 18:30:00" dt_fim="2020-02-20 18:30:00" em_cartaz="1" id_diretor="33" id_teatro="33" />
+   <ESPETACULO id="34" titulo="Alice" descricao="Peça infantil - historia de Alice" dt_inicio="2020-01-10 18:30:00" dt_fim="2020-01-20 18:30:00" em_cartaz="1"  id_diretor="34" id_teatro="34" />
+   <ESPETACULO id="35" titulo="O Mundo de Mônica" descricao="Monica é uma garota cega que enxerga as coisas do seu modo" dt_inicio="2020-01-10 18:30:00" dt_fim="2020-01-20 18:30:00" em_cartaz="1" id_diretor="35" id_teatro="35"/>
    <!-- Fim Espetaculo -->
    
    <!-- Contrato -->
-   <CONTRATO cache="1000" id_ator="1" />
-   <CONTRATO cache="1000" id_ator="2" />
-   <CONTRATO cache="1000" id_ator="3" />
-   <CONTRATO cache="1000" id_ator="4" />
-   <CONTRATO cache="1000" id_ator="5" />
+   <CONTRATO id="31" cache="1000" id_ator="31" />
+   <CONTRATO id="32" cache="1000" id_ator="32" />
+   <CONTRATO id="33" cache="1000" id_ator="33" />
+   <CONTRATO id="34" cache="1000" id_ator="34" />
+   <CONTRATO id="35" cache="1000" id_ator="35" />
    
    
-   <CONTRATO cache="2000" id_ator="1" />
-   <CONTRATO cache="2000" id_ator="2" />
-   <CONTRATO cache="2000" id_ator="3" />
-   <CONTRATO cache="2000" id_ator="4" />
-   <CONTRATO cache="2000" id_ator="5" />   
+   <CONTRATO id="36" cache="2000" id_ator="31" />
+   <CONTRATO id="37" cache="2000" id_ator="32" />
+   <CONTRATO id="38" cache="2000" id_ator="33" />
+   <CONTRATO id="39" cache="2000" id_ator="34" />
+   <CONTRATO id="40" cache="2000" id_ator="35" />
    <!-- Fim Contrato -->
    
    <!-- CONTRATO_ESPETACULO -->
-   <CONTRATO_ESPETACULO espetaculo_id="1" contrato_id="1"/>
-   <CONTRATO_ESPETACULO espetaculo_id="1" contrato_id="2"/>
-   <CONTRATO_ESPETACULO espetaculo_id="1" contrato_id="3"/>
-   <CONTRATO_ESPETACULO espetaculo_id="1" contrato_id="4"/>
-   <CONTRATO_ESPETACULO espetaculo_id="1" contrato_id="5"/>
+   <CONTRATO_ESPETACULO espetaculo_id="31" contrato_id="31"/>
+   <CONTRATO_ESPETACULO espetaculo_id="31" contrato_id="32"/>
+   <CONTRATO_ESPETACULO espetaculo_id="31" contrato_id="33"/>
+   <CONTRATO_ESPETACULO espetaculo_id="31" contrato_id="34"/>
+   <CONTRATO_ESPETACULO espetaculo_id="31" contrato_id="35"/>
    
-   <CONTRATO_ESPETACULO espetaculo_id="2" contrato_id="6"/>
-   <CONTRATO_ESPETACULO espetaculo_id="2" contrato_id="7"/>
-   <CONTRATO_ESPETACULO espetaculo_id="2" contrato_id="8"/>
-   <CONTRATO_ESPETACULO espetaculo_id="2" contrato_id="9"/>
-   <CONTRATO_ESPETACULO espetaculo_id="2" contrato_id="10"/>
+   <CONTRATO_ESPETACULO espetaculo_id="32" contrato_id="36"/>
+   <CONTRATO_ESPETACULO espetaculo_id="32" contrato_id="37"/>
+   <CONTRATO_ESPETACULO espetaculo_id="32" contrato_id="38"/>
+   <CONTRATO_ESPETACULO espetaculo_id="32" contrato_id="39"/>
+   <CONTRATO_ESPETACULO espetaculo_id="32" contrato_id="40"/>
    
 </dataset>

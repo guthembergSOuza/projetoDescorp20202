@@ -39,7 +39,7 @@ public class EspetaculoJPQL extends GenericTest {
         TypedQuery<Espetaculo> query = em.createQuery(
                 "SELECT e FROM Espetaculo e WHERE e.diretor.id = :idDiretor",
                 Espetaculo.class);
-        query.setParameter("idDiretor", 1);
+        query.setParameter("idDiretor", 31);
 
         List<Espetaculo> espetaculos = query.getResultList();
 
