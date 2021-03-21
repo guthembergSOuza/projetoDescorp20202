@@ -15,6 +15,8 @@ import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.Size;
 
 /**
  *
@@ -40,8 +42,9 @@ public class Teatro implements Serializable {
     @Column(name="id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column(name="nome")
+    @Column(name="nome", unique = true)
     private String nome;
+    @Min(20)
     @Column(name="quantidade_lugares")
     private int quantidadeLugares;
     @Embedded
@@ -114,5 +117,6 @@ public class Teatro implements Serializable {
         }
         return true;
     }
+    
     
 }
