@@ -40,7 +40,6 @@ public class Diretor extends Usuario implements Serializable {
     private List<Espetaculo> espetaculosDirigidos;
     
     @NotNull
-    @Enumerated(EnumType.STRING)
     @Column(name = "tipoDiretor")
     private TipoDiretor tipoDiretor;
 
@@ -76,6 +75,7 @@ public class Diretor extends Usuario implements Serializable {
         sb.append(companhiaDeTeatro);
         sb.append(", ");
         sb.append(espetaculosDirigidos);  
+        sb.append(", ");
         sb.append(tipoDiretor);
         sb.append("]");
         return sb.toString();
