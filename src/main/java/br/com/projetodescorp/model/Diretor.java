@@ -12,6 +12,8 @@ import javax.persistence.OneToMany;
 import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
 import javax.persistence.Column;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.validation.constraints.NotNull;
 
 
@@ -38,6 +40,7 @@ public class Diretor extends Usuario implements Serializable {
     private List<Espetaculo> espetaculosDirigidos;
     
     @NotNull
+    @Enumerated(EnumType.STRING)
     @Column(name = "tipoDiretor")
     private TipoDiretor tipoDiretor;
 
@@ -67,7 +70,15 @@ public class Diretor extends Usuario implements Serializable {
 
     @Override
     public String toString() {
-        return "Diretor{" + "companhiaDeTeatro=" + companhiaDeTeatro + ", espetaculosDirigidos=" + espetaculosDirigidos + ", tipoDiretor=" + tipoDiretor + '}';
-    }
+        StringBuilder sb = new StringBuilder("br.com.projetodescorp.model.Diretor[");
+        sb.append(super.toString());
+        sb.append(", ");
+        sb.append(companhiaDeTeatro);
+        sb.append(", ");
+        sb.append(espetaculosDirigidos);  
+        sb.append(tipoDiretor);
+        sb.append("]");
+        return sb.toString();
+    }    
 
 }
