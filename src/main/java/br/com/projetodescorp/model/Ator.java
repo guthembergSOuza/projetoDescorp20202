@@ -22,6 +22,9 @@ import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
 
 /**
  *
@@ -44,12 +47,18 @@ public class Ator extends Usuario implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     @Column(name = "drt", nullable = false, unique = true)
+    @Size(min = 6)
+    @NotBlank
     private String drt;
+
     @Column(name = "disponivel", nullable = false)
     private Boolean disponivel;
+
     @Embedded
     private Endereco endereco;
+
     @OneToMany(mappedBy = "ator", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private List<Contrato> contrato;
 

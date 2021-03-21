@@ -23,50 +23,45 @@ import org.junit.Test;
  */
 public class AtorValidationTest extends GenericTest {
 
+    Endereco mEndereco = new Endereco();
+
     @Test(expected = ConstraintViolationException.class)
     public void persistirAtorInvalido() {
-        Ator ator = null;
-        Endereco endereco = new Endereco();
 
-        endereco.setBairro("Bairo X");
-        endereco.setCep("00585-889"); //Inválido
-        endereco.setCidade("Cidade X");
-        endereco.setComplemento("");
-        endereco.setNumero(0);//Inválido
-        endereco.setRua("Rua X");
-        endereco.setUf("XX");
+        Ator ator = new Ator();
 
         try {
-            ator = new Ator();
-
-            ator.setNome("Fulaninho");
+            //Dados de usuário
+            ator.setNome("Teste Validation");
+            ator.setEmail("FulanodaSilva@gmail.com");
+            ator.setLogin("FulanodaSilva");
+            ator.setSenha("Senha1234");
+            //Dados de artor
+            ator.setDrt("");
             ator.setDisponivel(Boolean.TRUE);
-            ator.setDrt("0");//Inválido
-            ator.setEmail("@email");//Inválido
-            ator.setEndereco(endereco);
-            ator.setLogin("login");
-            ator.setSenha("1234"); //
+            ator.setEndereco(mEndereco.criarEndereco());
 
             em.persist(ator);
             em.flush();
 
-        } catch (ConstraintViolationException e) {
-            Set<ConstraintViolation<?>> constraintViolations = e.getConstraintViolations();
+            ator = em.find(Ator.class, 7L);
+            assertEquals("Teste Validation", ator.getNome());
+
+        } catch (ConstraintViolationException ex) {
+
+            Set<ConstraintViolation<?>> constraintViolations = ex.getConstraintViolations();
+
             constraintViolations.forEach(violation -> {
                 assertThat(violation.getRootBeanClass() + "." + violation.getPropertyPath() + ": " + violation.getMessage(),
                         CoreMatchers.anyOf(
-                                startsWith("class br.com.projetodescorp.model.Ator.endereco.cep: CEP inválido. Deve estar no formado NN.NNN-NNN, onde N é número natural"),
-                                startsWith("class br.com.projetodescorp.model.Ator.endereco.numero: Número inválido"),
-                                startsWith("class br.com.projetodescorp.model.Ator.endereco.uf: Estado inválido"),
-                                startsWith("class br.com.projetodescorp.model.Ator.drt: Drt inválido, o tamanho deve ser 6"),
-                                startsWith("class br.com.projetodescorp.model.Ator.email: deve ser um endereço de e-mail bem formado")
+                                startsWith("class br.com.projetodescorp.model.Ator.drt: Drt inválido, o tamanho deve ser 6")
                         )
                 );
             });
 
-            assertEquals(5, constraintViolations.size());
-            assertNull(ator.getId());
-            throw e;
+            assertEquals(1, constraintViolations.size());
+
+            throw ex;
 
         }
     }
