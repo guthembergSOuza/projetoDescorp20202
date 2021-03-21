@@ -16,6 +16,7 @@ import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.Min;
+import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
 /**
@@ -42,7 +43,8 @@ public class Teatro implements Serializable {
     @Column(name="id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column(name="nome", unique = true)
+    @Column(name="nome")
+    @Pattern(regexp = ".{5,100}", message = "{br.com.projetodescorp.model.Teatro.nome}")
     private String nome;
     @Min(20)
     @Column(name="quantidade_lugares")

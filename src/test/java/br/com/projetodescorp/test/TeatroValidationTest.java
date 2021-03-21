@@ -3,6 +3,7 @@ package br.com.projetodescorp.test;
 import br.com.projetodescorp.model.Endereco;
 import br.com.projetodescorp.model.Teatro;
 import java.util.Set;
+import javax.persistence.TypedQuery;
 import javax.validation.ConstraintViolation;
 import javax.validation.ConstraintViolationException;
 import org.hamcrest.CoreMatchers;
@@ -28,7 +29,7 @@ public class TeatroValidationTest extends GenericTest {
         
         try{
             teatro = new Teatro();
-            teatro = criarTeatro("Teatro da Casa Branca",1,457,"R. da Aurora","Boa Vista","Recife","PE","52121021","na avenida");
+            teatro = criarTeatro("Teat",1,457,"R. da Aurora","Boa Vista","Recife","PE","52121021","na avenida");
             em.persist(teatro);
             em.flush();
 
@@ -39,16 +40,39 @@ public class TeatroValidationTest extends GenericTest {
             constraintViolations.forEach(violation -> {
                 assertThat(violation.getRootBeanClass() + "." + violation.getPropertyPath() + ": " + violation.getMessage(),
                         CoreMatchers.anyOf(
-                            startsWith("class br.com.projetodescorp.model.Teatro.quantidadeLugares: deve ser maior que ou igual à 20")
+                            startsWith("class br.com.projetodescorp.model.Teatro.quantidadeLugares: deve ser maior que ou igual à 20"),
+                            startsWith("class br.com.projetodescorp.model.Teatro.nome: Deve possuir pelomenos 5 caracteres.")
                         )
                 );
             });
 
-            assertEquals(1, constraintViolations.size());
+            assertEquals(2, constraintViolations.size());
             //assertNull(teatro.getId());
             throw ex;
             
         }
+    }
+    
+    @Test(expected = ConstraintViolationException.class)
+    public void atualizarTeatroInvalido (){
+        
+        TypedQuery<Teatro> query = em.createQuery("SELECT t FROM Teatro t WHERE t.id = :id", Teatro.class);
+        query.setParameter("id", 32);
+        Teatro teatroUpdate = query.getSingleResult();
+        
+        teatroUpdate.setNome("nome");
+        
+        try {
+            em.flush();
+        } catch (ConstraintViolationException ex) {    
+            ConstraintViolation violation = ex.getConstraintViolations().iterator().next();
+            assertEquals("Deve possuir pelomenos 5 caracteres.", violation.getMessage());
+            assertEquals(1, ex.getConstraintViolations().size());
+            throw ex;
+        }
+        
+        
+            
     }
     
      private Teatro criarTeatro(String nome, int quantidadeLugares, 
