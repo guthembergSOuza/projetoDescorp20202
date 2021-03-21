@@ -17,14 +17,14 @@ import static org.junit.Assert.assertThat;
 
 public class DiretorValidationTest extends GenericTest {
     
-   /* 
+   
     @Test(expected = ConstraintViolationException.class)
     public void PersistirDiretorInvalido(){
        
         try {
             Diretor diretor = new Diretor();
             diretor.setNome("Lucimar Junior");
-            diretor.setCompanhiaDeTeatro("Escola de Teatro de Camaragibe");
+            diretor.setCompanhiaDeTeatro("Praxis Dramatica"); //
             diretor.setEmail("lucimar.junior@gmail.com");
             diretor.setSenha("11223344");
             diretor.setLogin("lucimar.junior");
@@ -41,9 +41,7 @@ public class DiretorValidationTest extends GenericTest {
             constraintViolations.forEach(violation -> {
                 assertThat(violation.getRootBeanClass() + "." + violation.getPropertyPath() + ": " + violation.getMessage(),
                         CoreMatchers.anyOf(
-                                startsWith("class br.com.projetodescorp.model.Diretor.companhiaDeTeatro: Companhia de Teatro Inválida."),
-                                startsWith("class br.com.projetodescorp.modelDiretor.email: deve ser um endereço de e-mail bem formado")
-
+                                startsWith("class br.com.projetodescorp.model.Diretor.companhiaDeTeatro: Companhia de Teatro Inválida.")
                         )
                 );
             });
@@ -54,5 +52,5 @@ public class DiretorValidationTest extends GenericTest {
             
         }
     }
-    */
+    
 }
