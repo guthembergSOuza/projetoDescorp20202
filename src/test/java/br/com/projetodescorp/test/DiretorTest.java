@@ -24,13 +24,13 @@ public class DiretorTest extends GenericTest {
 
     }
     
-    @org.junit.Test
-    public void consultarDiretor() {
-        Diretor diretor = em.find(Diretor.class, 41L);
-        
-        //procurar Teatro de Santa Isabel - bairro = Santo Antônio
-        assertEquals("Thiago Antonio", diretor.getNome());
-        assertEquals("thiago.a@gmail.com", diretor.getEmail());
-       
-    }
+//    @org.junit.Test
+//    public void consultarDiretor() {
+//        Diretor diretor = em.find(Diretor.class, 41L);
+//        
+//        //procurar Teatro de Santa Isabel - bairro = Santo Antônio
+//        assertEquals("Thiago Antonio", diretor.getNome());
+//        assertEquals("thiago.a@gmail.com", diretor.getEmail());
+//       
+//    }
 }

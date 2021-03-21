@@ -161,5 +161,27 @@ public class Espetaculo implements Serializable {
         }
         return true;
     }
+        
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder("br.com.projetodescorp.model.Espetaculo[");
+        sb.append(super.toString());
+        sb.append(", ");
+        sb.append(titulo);
+        sb.append(", ");
+        sb.append(descricao);        
+        sb.append(", ");
+        sb.append(emCartaz);        
+        sb.append(", ");
+        sb.append(dataInicio);
+        sb.append(", ");
+        sb.append(dataFim);
+        sb.append(", ");
+        sb.append(teatro);
+        sb.append(", ");
+        sb.append(elenco);
+        sb.append("]");
+        return sb.toString();
+    } 
 
 }
