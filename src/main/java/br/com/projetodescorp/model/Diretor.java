@@ -1,35 +1,26 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package br.com.projetodescorp.model;
 
 import java.io.Serializable;
 import java.util.List;
-import java.util.Objects;
 import javax.persistence.CascadeType;
-import javax.persistence.Column;
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
+import javax.persistence.Column;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.validation.constraints.NotNull;
 
-/**
- *
- * @author guthemberg
- */
+
 @Entity
 @Table(name = "DIRETOR")
 @DiscriminatorValue(value = "D")
-@PrimaryKeyJoinColumn(name = "ID", referencedColumnName = "ID")
+@PrimaryKeyJoinColumn(name="ID", referencedColumnName = "ID")
 @NamedQueries(
         {
             @NamedQuery(
@@ -40,26 +31,17 @@ import javax.persistence.Table;
 )
 public class Diretor extends Usuario implements Serializable {
     
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-    
+    @NotNull
+    @ValidaCompanhiaDiretor
     @Column(name="companhia_de_teatro",nullable = false)
     private String companhiaDeTeatro;
     
     @OneToMany(mappedBy = "diretor", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    private List<Espetaculo> esptetaculosDirigidos;
-
-    @Column(name="tipodiretor")
-    private TipoDiretor tipoDiretor;
+    private List<Espetaculo> espetaculosDirigidos;
     
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
+    @NotNull
+    @Column(name = "tipoDiretor")
+    private TipoDiretor tipoDiretor;
 
     public String getCompanhiaDeTeatro() {
         return companhiaDeTeatro;
@@ -70,11 +52,11 @@ public class Diretor extends Usuario implements Serializable {
     }
 
     public List<Espetaculo> getEsptetaculosDirigidos() {
-        return esptetaculosDirigidos;
+        return espetaculosDirigidos;
     }
 
-    public void setEsptetaculosDirigidos(List<Espetaculo> esptetaculosDirigidos) {
-        this.esptetaculosDirigidos = esptetaculosDirigidos;
+    public void setEspetaculosDirigidos(List<Espetaculo> espetaculosDirigidos) {
+        this.espetaculosDirigidos = espetaculosDirigidos;
     }
 
     public TipoDiretor getTipoDiretor() {
@@ -86,29 +68,17 @@ public class Diretor extends Usuario implements Serializable {
     }
 
     @Override
-    public int hashCode() {
-        int hash = 7;
-        hash = 43 * hash + Objects.hashCode(this.id);
-        return hash;
-    }
+    public String toString() {
+        StringBuilder sb = new StringBuilder("br.com.projetodescorp.model.Diretor[");
+        sb.append(super.toString());
+        sb.append(", ");
+        sb.append(companhiaDeTeatro);
+        sb.append(", ");
+        sb.append(espetaculosDirigidos);  
+        sb.append(", ");
+        sb.append(tipoDiretor);
+        sb.append("]");
+        return sb.toString();
+    }    
 
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final Diretor other = (Diretor) obj;
-        if (!Objects.equals(this.id, other.id)) {
-            return false;
-        }
-        return true;
-    }
-    
-    
 }

@@ -87,4 +87,25 @@ public class ContratoTest extends GenericTest {
 //
 //    }
 
+        Ator ator = em.find(Ator.class, 31L);
+        assertNotNull(ator);
+
+        contrato.setAtor(ator);
+        contrato.setCache("1500");        
+
+        em.persist(contrato);
+        em.flush();
+
+        assertNotNull(contrato.getId());
+
+    }
+
+    @Test
+    public void consultarContrato() {
+        Contrato contrato1 = em.find(Contrato.class, 33L);
+        contrato1 = em.find(Contrato.class, 33L);
+
+        assertEquals("Lucas Marques".toUpperCase(), contrato1.getAtor().getNome().toUpperCase());
+    }
+    
 }

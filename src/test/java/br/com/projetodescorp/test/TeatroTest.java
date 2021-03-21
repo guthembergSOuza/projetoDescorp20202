@@ -16,69 +16,61 @@ import org.junit.Test;
  * @author guthemberg
  */
 public class TeatroTest extends GenericTest {
-//    
-//    @Test
-//    public void persistirTeatro() {
-//        Teatro teatro;
-//        teatro = criarTeatro("Teatro Arraial Ariano Suassuna",94,457,"R. da Aurora","Boa Vista","Recife","PE","50050000","na avenida");
-//        em.persist(teatro);
-//        em.flush(); //força que a persistência realizada vá para o banco neste momento.
-//
-//        assertNotNull(teatro.getId());
-//    }
-//    
-//    private Teatro criarTeatro(String nome, int quantidadeLugares, 
-//            Integer numero,
-//            String rua,
-//            String bairro,
-//            String cidade,
-//            String uf,
-//            String cep,
-//            String complemento  ) {
-//        
-//        Teatro novoTeatro = new Teatro();
-//        novoTeatro.setNome(nome);
-//        novoTeatro.setQuantidadeLugares(quantidadeLugares);
-//        novoTeatro.setEndereco(criarEndereco(numero,rua,bairro,cidade,uf,cep,complemento));
-//        
-//        return novoTeatro;
-//    }
-//    
-//    private Endereco criarEndereco( Integer numero,
-//            String rua,
-//            String bairro,
-//            String cidade,
-//            String uf,
-//            String cep,
-//            String complemento  ) {
-//        
-//        Endereco endereco = new Endereco();
-//        endereco.setNumero(numero);
-//        endereco.setRua(rua);
-//        endereco.setBairro(bairro);
-//        endereco.setCidade(cidade);
-//        endereco.setUf(uf);
-//        endereco.setCep(cep);
-//        endereco.setComplemento(complemento);
-//        
-//        return endereco;
-//    }
-//    
-//    @Test
-//    public void consultarTeatro() {
-//        Teatro teatro = em.find(Teatro.class, 1L);
-//        
-//        //procurar Teatro de Santa Isabel - bairro = Santo Antônio
-//        assertEquals("Teatro de Santa Isabel", teatro.getNome());
-//        assertEquals("Santo Antônio", teatro.getEndereco().getBairro());
-//       
-//    }
-//    
-//    @Test
-//    public void atualizarTeatro() {
-//    }
-//
-//    @Test
-//    public void deletarTeatro() {
-//    }
+    
+    @Test
+    public void persistirTeatro() {
+        Teatro teatro;
+        teatro = criarTeatro("Teatro Arraial Ariano Suassuna",94,457,"R. da Aurora","Boa Vista","Recife","PE","50050000","na avenida");
+        em.persist(teatro);
+        em.flush(); //força que a persistência realizada vá para o banco neste momento.
+
+        assertNotNull(teatro.getId());
+    }
+    
+    private Teatro criarTeatro(String nome, int quantidadeLugares, 
+            Integer numero,
+            String rua,
+            String bairro,
+            String cidade,
+            String uf,
+            String cep,
+            String complemento  ) {
+        
+        Teatro novoTeatro = new Teatro();
+        novoTeatro.setNome(nome);
+        novoTeatro.setQuantidadeLugares(quantidadeLugares);
+        novoTeatro.setEndereco(criarEndereco(numero,rua,bairro,cidade,uf,cep,complemento));
+        
+        return novoTeatro;
+    }
+    
+    private Endereco criarEndereco( Integer numero,
+            String rua,
+            String bairro,
+            String cidade,
+            String uf,
+            String cep,
+            String complemento  ) {
+        
+        Endereco endereco = new Endereco();
+        endereco.setNumero(numero);
+        endereco.setRua(rua);
+        endereco.setBairro(bairro);
+        endereco.setCidade(cidade);
+        endereco.setUf(uf);
+        endereco.setCep(cep);
+        endereco.setComplemento(complemento);
+        
+        return endereco;
+    }
+    
+    @Test
+    public void consultarTeatro() {
+        Teatro teatro = em.find(Teatro.class, 31L);
+        
+        //procurar Teatro de Santa Isabel - bairro = Santo Antônio
+        assertEquals("Teatro de Santa Isabel", teatro.getNome());
+        assertEquals("Santo Antônio", teatro.getEndereco().getBairro());
+       
+    }
 }

@@ -17,8 +17,69 @@ import static org.junit.Assert.*;
  * @author gersonbrandao
  */
 public class DiretorJPQL extends GenericTest{
-//    
-//    
+    
+    
+    @Test
+    public void diretorPorNome(){
+        logger.info("Executando diretorPorNome()");
+        TypedQuery<Diretor> query = em.createQuery("SELECT d FROM Diretor d WHERE d.nome LIKE :nome", Diretor.class);
+        query.setParameter("nome", "Jorge Vercillo");
+        List<Diretor> diretores = query.getResultList();
+        assertNotNull(diretores);
+        assertEquals(2, diretores.size());
+    }
+    
+    @Test
+    public void diretorCompanhiaTeatro(){
+        logger.info("Executando diretorCompanhiaTeatro()");
+        TypedQuery<Diretor> query = em.createQuery("SELECT d FROM Diretor d WHERE d.companhiaDeTeatro LIKE ?1", Diretor.class);
+        query.setParameter(1, "Teatro em Foco");
+        List<Diretor> diretores = query.getResultList();
+        assertNotNull(diretores);
+        assertEquals(2, diretores.size());
+    }
+    
+
+     @Test
+    public void diretorPorLogin() {
+        logger.info("Executando diretorPorLogin()");
+        TypedQuery<Diretor> query;
+        query = em.createQuery(
+                "SELECT d FROM Diretor d WHERE d.login = ?1", Diretor.class);
+        query.setParameter(1, "j.vercillo");
+        Diretor diretor = query.getSingleResult();
+        assertEquals("j.vercillo", diretor.getLogin());
+        
+    }
+
+    
+    @Test
+    public void diretorTipoDistinto() {
+        logger.info("Executando diretorTipoDistinto()");
+        TypedQuery<String> query
+                = em.createQuery("SELECT DISTINCT(d.tipoDiretor) FROM Diretor d ORDER BY d.tipoDiretor", String.class);
+        List<String> diretores = query.getResultList();
+        assertNotNull(diretores);
+        assertEquals(2, diretores.size());
+    }
+    
+ 
+    @Test
+    public void diretorPorId() {
+        logger.info("Executando diretorPorId()");
+        TypedQuery<Diretor> query = em.createQuery("SELECT d FROM Diretor d WHERE d.id = ?1", Diretor.class);
+        query.setParameter(1, 48);
+        List<Diretor> diretores = query.getResultList();
+        assertNotNull(diretores);
+        assertEquals(1, diretores.size());
+    }
+    
+    
+    
+    
+    
+    ///////////////////////////////////////////////////////////////////////////////////////////////////
+
 //    @Test
 //    public void diretorPorNome(){
 //        logger.info("Executando diretorPorNome()");

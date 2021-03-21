@@ -7,16 +7,12 @@ package br.com.projetodescorp.model;
 
 import java.io.Serializable;
 import java.util.List;
-import java.util.Objects;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
@@ -32,7 +28,7 @@ import javax.validation.constraints.Size;
  */
 @Entity
 @Table(name = "ATOR")
-@DiscriminatorValue(value = "C")
+@DiscriminatorValue(value = "A")
 @PrimaryKeyJoinColumn(name = "ID", referencedColumnName = "ID")
 @NamedQueries(
         {
@@ -43,10 +39,6 @@ import javax.validation.constraints.Size;
         }
 )
 public class Ator extends Usuario implements Serializable {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
 
     @Column(name = "drt", nullable = false, unique = true)
     @Size(min = 6)
@@ -61,14 +53,6 @@ public class Ator extends Usuario implements Serializable {
 
     @OneToMany(mappedBy = "ator", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private List<Contrato> contrato;
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
 
     public String getDrt() {
         return drt;
@@ -94,29 +78,17 @@ public class Ator extends Usuario implements Serializable {
         this.endereco = endereco;
     }
 
-    @Override
-    public int hashCode() {
-        int hash = 3;
-        hash = 47 * hash + Objects.hashCode(this.id);
-        return hash;
+    public List<Contrato> getContrato() {
+        return contrato;
+    }
+
+    public void setContrato(List<Contrato> contrato) {
+        this.contrato = contrato;
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final Ator other = (Ator) obj;
-        if (!Objects.equals(this.id, other.id)) {
-            return false;
-        }
-        return true;
+    public String toString() {
+        return "Ator{" + "drt=" + drt + ", disponivel=" + disponivel + ", endereco=" + endereco + ", contrato=" + contrato + '}';
     }
 
 }

@@ -8,6 +8,12 @@ package br.com.projetodescorp.model;
 import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
 
 /**
  *
@@ -16,18 +22,30 @@ import javax.persistence.Embeddable;
 @Embeddable
 public class Endereco implements Serializable {
 
+    @NotNull
+    @Min(1)
+    @Max(99999)
     @Column(name = "numero")
     private Integer numero;
+    @NotBlank
+    @Size(max = 150)
     @Column(name = "rua")
     private String rua;
+    @NotBlank
+    @Size(max = 150)
     @Column(name = "bairro")
     private String bairro;
+    @NotBlank
+    @Size(max = 50)
     @Column(name = "cidade")
     private String cidade;
     @Column(name = "uf")
     private String uf;
+    @NotNull
+    @Pattern(regexp = "[0-90]{2}.[0-9]{3}-[0-9]{3}", message = "{exemplo.jpa.Endereco.cep}")
     @Column(name = "cep")
     private String cep;
+    @Size(max = 40)
     @Column(name = "complemento")
     private String complemento;
 

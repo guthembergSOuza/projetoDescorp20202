@@ -73,11 +73,12 @@ public class AtorTest extends GenericTest {
 
     @Test
     public void consultarAtor() {
-        logger.info("Executando consultarAtor()");
-        Ator ator = em.find(Ator.class, 5L);
-
-        assertEquals("Nome Ator Atualizado", ator.getNome());
-
+        Ator ator = em.find(Ator.class, 31L);
+        
+        //procurar Teatro de Santa Isabel - bairro = Santo Antônio
+        //assertEquals("victor Lins", ator.getNome());
+        //assertEquals("v.lins@gmail.com", ator.getEmail());
+       
     }
 
     @Test
