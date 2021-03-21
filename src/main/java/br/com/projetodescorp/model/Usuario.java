@@ -20,10 +20,6 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
-/**
- *
- * @author guthemberg
- */
 @Entity
 @Table(name = "USUARIO")
 @Inheritance(strategy = InheritanceType.JOINED) //Estratégia de herança.
@@ -34,6 +30,9 @@ public abstract class Usuario implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     protected Long id;
+    @NotBlank
+    //@Size(min = 5, max = 30)
+    //@Pattern(regexp = "\\p{Upper}{1}\\p{Lower}+", message = "{br.com.projetodescorp.model.Usuario.nome}")
     @Column(name = "NOME")
     protected String nome;
     @NotNull
@@ -45,6 +44,8 @@ public abstract class Usuario implements Serializable{
     @Column(name = "LOGIN", unique = true)
     protected String login;
     @NotBlank
+    //@Size(min = 6, max = 20)
+    //@Pattern(regexp = "((?=.*\\p{Digit})(?=.*\\p{Lower})(?=.*\\p{Upper})(?=.*\\p{Punct}).{6,20})", message = "{br.com.projetodescorp.model.Usuario.senha}")
     @Column(name = "SENHA")
     protected String senha;
 
