@@ -31,8 +31,8 @@ public abstract class Usuario implements Serializable{
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     protected Long id;
     @NotBlank
-    //@Size(min = 5, max = 30)
-    //@Pattern(regexp = "\\p{Upper}{1}\\p{Lower}+", message = "{br.com.projetodescorp.model.Usuario.nome}")
+    @Size(min = 5, max = 30)
+    @Pattern(regexp = "\\p{Upper}{1}\\p{Lower}+", message = "{br.com.projetodescorp.model.Usuario.nome}")
     @Column(name = "NOME")
     protected String nome;
     @NotNull

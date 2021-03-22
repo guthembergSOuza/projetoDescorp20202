@@ -19,7 +19,7 @@ public class ContratoTest extends GenericTest {
         assertNotNull(ator);
 
         contrato.setAtor(ator);
-        contrato.setCache("1500");        
+        contrato.setCache(1500.00);        
 
         em.persist(contrato);
         em.flush();

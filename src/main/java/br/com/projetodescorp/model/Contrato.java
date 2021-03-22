@@ -16,6 +16,8 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
 
 /**
  *
@@ -30,8 +32,10 @@ public class Contrato implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @Column(name = "cache", nullable = false)
-    private String cache;
+    @Min(100)
+    private Double cache;
     @ManyToOne(fetch = FetchType.EAGER, optional = false)
+    @NotNull
     @JoinColumn(name = "id_ator", referencedColumnName = "id", nullable = false)
     private Ator ator;
 
@@ -43,7 +47,7 @@ public class Contrato implements Serializable {
         return ator;
     }
 
-    public String getCache() {
+    public Double getCache() {
         return cache;
     }
 
@@ -55,7 +59,7 @@ public class Contrato implements Serializable {
         this.ator = ator;
     }
 
-    public void setCache(String cache) {
+    public void setCache(Double cache) {
         this.cache = cache;
     }
 

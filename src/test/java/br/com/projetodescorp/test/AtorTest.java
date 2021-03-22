@@ -20,17 +20,17 @@ public class AtorTest extends GenericTest{
     public void persistirAtor() {
         Ator ator = new Ator();
         //Dados de usuário
-        ator.setNome("Fulano da Silva Junior3");
+        ator.setNome("Fulano da Silva Junior");
         ator.setEmail("FulanodaSilva@gmail.com");
-        ator.setLogin("FulanodaSilva");
-        ator.setSenha("Senha1234");
+        ator.setLogin("FulanodaSilvAa");
+        ator.setSenha("Senha1234@#");
         //Dados de artor
-        ator.setDrt("80825728410");
+        ator.setDrt("80821114455");
         ator.setDisponivel(Boolean.TRUE);
         ator.setEndereco(criarEndereco());
 
-        em.persist(ator);
-        em.flush();
+        //em.persist(ator);
+        //em.flush();
 
         //assertNotNull(ator.getId());
 

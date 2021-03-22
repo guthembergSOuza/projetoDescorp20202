@@ -54,18 +54,18 @@
    <!-- Fim Espetaculo -->
    
    <!-- Contrato -->
-   <CONTRATO id="31" cache="1000" id_ator="31" />
-   <CONTRATO id="32" cache="1000" id_ator="32" />
-   <CONTRATO id="33" cache="1000" id_ator="33" />
-   <CONTRATO id="34" cache="1000" id_ator="34" />
-   <CONTRATO id="35" cache="1000" id_ator="35" />
+   <CONTRATO id="31" cache="1000.00" id_ator="31" />
+   <CONTRATO id="32" cache="1000.00" id_ator="32" />
+   <CONTRATO id="33" cache="1000.00" id_ator="33" />
+   <CONTRATO id="34" cache="1000.00" id_ator="34" />
+   <CONTRATO id="35" cache="1000.00" id_ator="35" />
    
    
-   <CONTRATO id="36" cache="2000" id_ator="31" />
-   <CONTRATO id="37" cache="2000" id_ator="32" />
-   <CONTRATO id="38" cache="2000" id_ator="33" />
-   <CONTRATO id="39" cache="2000" id_ator="34" />
-   <CONTRATO id="40" cache="2000" id_ator="35" />
+   <CONTRATO id="36" cache="2000.00" id_ator="31" />
+   <CONTRATO id="37" cache="2000.00" id_ator="32" />
+   <CONTRATO id="38" cache="2000.00" id_ator="33" />
+   <CONTRATO id="39" cache="2000.00" id_ator="34" />
+   <CONTRATO id="40" cache="2000.00" id_ator="35" />
    <!-- Fim Contrato -->
    
    <!-- CONTRATO_ESPETACULO -->
